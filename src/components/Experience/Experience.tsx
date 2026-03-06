@@ -1,7 +1,6 @@
 'use client'
 
 import React from 'react'
-import { motion } from 'framer-motion'
 import ScrollReveal from '../UI/ScrollReveal'
 
 interface ExperienceItem {
@@ -23,7 +22,7 @@ const Experience: React.FC<ExperienceProps> = ({ data, dict }) => {
       <div className="mx-auto max-w-[1200px] px-4">
         <ScrollReveal>
           <h2 className="text-secondary-content mb-12 text-center text-3xl font-bold md:text-4xl">
-            // {dict.title}
+            {dict.title}
           </h2>
         </ScrollReveal>
 

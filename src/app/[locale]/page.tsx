@@ -23,7 +23,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
       <ScrollReveal>
         <Skills dict={dict.skills} />
       </ScrollReveal>
-      <Experience data={experienceData} dict={(dict as any).experience} />
+      <Experience data={experienceData} dict={dict.experience} />
       <div className="mx-auto my-8 max-w-[1200px] px-4 md:my-[3.75rem]">
         <ScrollReveal duration={0.6}>
           <ProjectSection projects={projects} dict={dict.projects} />

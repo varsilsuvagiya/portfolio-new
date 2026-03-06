@@ -13,7 +13,6 @@ interface TestimonialCardProps {
 const TestimonialCard: FC<TestimonialCardProps> = ({
   testimonial: { name, title, feedback, image, stars },
   handleActiveCard,
-  index,
 }) => {
   const cardRef = useRef<HTMLDivElement>(null)
 

@@ -7,15 +7,16 @@ import TestimonialCard from './TestimonialCard'
 
 interface TestimonialSectionProps {
   testimonials: Testimonial[]
+  dict?: Record<string, string>
 }
 
-const TestimonialSection: React.FC<TestimonialSectionProps> = ({ testimonials }) => {
+const TestimonialSection: React.FC<TestimonialSectionProps> = ({ testimonials, dict }) => {
   const [activeCard, setActiveCard] = useState(0)
 
   return (
     <section id="testimonials">
       <SectionHeading
-        title="// Testimonials"
+        title={`// ${dict?.title || "Testimonials"}`}
         subtitle="Don't just take our word for it - see what actual users of our service have to say about their experience."
       />
 
@@ -24,6 +25,7 @@ const TestimonialSection: React.FC<TestimonialSectionProps> = ({ testimonials })
           <TestimonialCard
             key={idx}
             testimonial={testimonial}
+            index={idx}
             handleActiveCard={() => {
               setActiveCard(idx)
             }}

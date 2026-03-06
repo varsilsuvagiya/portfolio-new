@@ -1,6 +1,7 @@
 import { Project } from '@/lib/types'
 import Image from 'next/image'
 import { Earning, GithubIcon, Likes, PreviewIcon, Star, Timer } from '../../utils/icons'
+import ScrollReveal from '../UI/ScrollReveal'
 
 const IconText: React.FC<{ icon: string; text: string }> = ({ icon, text }) => (
   <li className="flex gap-2">
@@ -11,9 +12,10 @@ const IconText: React.FC<{ icon: string; text: string }> = ({ icon, text }) => (
 
 interface ProjectCardProps {
   data: Project
+  index: number
 }
 
-const ProjectCard: React.FC<ProjectCardProps> = ({ data }) => {
+const ProjectCard: React.FC<ProjectCardProps> = ({ data, index }) => {
   const {
     title,
     shortDescription,
@@ -30,7 +32,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ data }) => {
   } = data
 
   return (
-    <div className="bg-secondary border-border flex flex-col justify-between rounded-[14px] border p-5">
+    <ScrollReveal delay={index * 0.1}>
+      <div className="bg-secondary border-border flex flex-col justify-between rounded-[14px] border p-5">
       <div className="flex items-start justify-between gap-2">
         <div className="flex-1">
           <div className="flex flex-col flex-wrap gap-3 sm:flex-row sm:items-center">
@@ -88,8 +91,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ data }) => {
             </a>
           )}
         </div>
+        </div>
       </div>
-    </div>
+    </ScrollReveal>
   )
 }
 

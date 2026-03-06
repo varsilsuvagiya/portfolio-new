@@ -1,8 +1,8 @@
 {
-  "name": "John Doe",
-  "title": "CEO",
-  "feedback": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget sapien egestas fermentum eget auctor justo. Nullam sit amet nunc nec purus tincidunt aliquam. Nullam sit amet nunc nec purus tincidunt aliquam.",
-  "image": "https://i.pravatar.cc/150?img=12",
+  "name": "Neha Gupta",
+  "title": "Founder, TechNova",
+  "feedback": "Brought our vision to life with incredible precision. The expertise in React and modern UI development is evident in the blazing fast performance of our new platform. A fantastic collaborator!",
+  "image": "https://i.pravatar.cc/150?img=9",
   "stars": 5,
-  "createdAt": "2025-01-01"
+  "createdAt": "2024-08-05"
 }

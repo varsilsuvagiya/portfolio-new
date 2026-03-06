@@ -72,6 +72,38 @@
   --gradient-end: #6d4c41;
 }
 
+
+
+[data-theme='monokai'] {
+  --p: #272822;
+  --pc: #f8f8f2;
+  --s: #3e3d32;
+  --sc: #a6e22e;
+  --tc: #75715e;
+  --a: #f92672;
+  --n: #e6db74;
+  --b: #49483e;
+  --marquee: #49483e;
+  --gradient-start: #f92672;
+  --gradient-mid: #fd971f;
+  --gradient-end: #a6e22e;
+}
+
+[data-theme='forest'] {
+  --p: #1e2b20;
+  --pc: #d5e4d1;
+  --s: #283a2a;
+  --sc: #8ebd8b;
+  --tc: #5a775a;
+  --a: #b7da60;
+  --n: #f0f6ee;
+  --b: #324734;
+  --marquee: #324734;
+  --gradient-start: #b7da60;
+  --gradient-mid: #8ebd8b;
+  --gradient-end: #5a775a;
+}
+
 @theme {
   --color-primary: var(--p);
   --color-primary-content: var(--pc);
@@ -88,8 +120,8 @@
   --animate-blink: blink 0.8s ease-in-out infinite;
   --animate-fade-up: fade-up 0.3s ease-out 1;
 
-  --background-image-large-glow: url('../assets/images/bg-lg.svg');
-  --background-image-small-glow: url('../assets/images/bg-sm.svg');
+  /* --background-image-large-glow: url('../assets/images/bg-lg.svg'); */
+  /* --background-image-small-glow: url('../assets/images/bg-sm.svg'); */
   --background-image-skill-gradient: linear-gradient(to right, var(--p), #062b48, var(--p));
 
   --background-position-large-glow-position: 110% 30%;

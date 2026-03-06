@@ -2,11 +2,15 @@ import { serviceData } from '../../appData'
 import SectionHeading from '../SectionHeading/SectionHeading'
 import ServiceCard from './ServiceCard'
 
-const ServiceSection = () => {
+type ServiceSectionProps = {
+  dict: Record<string, string>
+}
+
+const ServiceSection = ({ dict }: ServiceSectionProps) => {
   return (
     <section id="services" className="my-14">
       <SectionHeading
-        title="// Services / Offers:"
+        title={`// ${dict.title}`}
         subtitle="I offer a wide range of services to ensure you have the best written code and stay ahead in the competition."
       />
 
@@ -17,6 +21,7 @@ const ServiceSection = () => {
             icon={service.icon}
             title={service.title}
             shortDescription={service.shortDescription}
+            index={index}
           />
         ))}
       </div>

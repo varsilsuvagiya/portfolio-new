@@ -6,26 +6,19 @@ import { useState } from 'react'
 import { BurgerIcon, CloseIcon } from '../../utils/icons'
 import Logo from './Logo'
 
-const navItems = [
-  {
-    label: '_home',
-    href: '/',
-  },
-  {
-    label: '_projects',
-    href: '/#projects',
-  },
-  {
-    label: '_services',
-    href: '/#services',
-  },
-  {
-    label: '_contact-me',
-    href: '/#contact',
-  },
-]
+type NavbarProps = {
+  dict: Record<string, string>
+  locale: string
+}
 
-const Navbar = () => {
+const Navbar = ({ dict, locale }: NavbarProps) => {
+  const navItems = [
+    { label: dict.home || 'Home', href: `/${locale}` },
+    { label: dict.projects || 'Projects', href: `/${locale}/#projects` },
+    { label: dict.experience || 'Experience', href: `/${locale}/#experience` },
+    { label: dict.services || 'Services', href: `/${locale}/#services` },
+    { label: dict.contact || 'Contact-me', href: `/${locale}/#contact` },
+  ]
   const [isVisible, setIsVisible] = useState(false)
   const pathname = usePathname()
 
@@ -37,12 +30,12 @@ const Navbar = () => {
     <nav className="bg-primary border-border h-16 overflow-hidden border-b">
       <div className="mx-auto flex h-full w-dvw max-w-[1200px] items-center justify-between px-4 py-1">
         {isVisible ? (
-          <div className="text-primary-content md:hidden">_menu</div>
+          <div className="text-primary-content md:hidden">Menu</div>
         ) : (
-          <Link href="/">
+          <Link href={`/${locale}`}>
             <div className="animate-fade-up text-primary-content relative flex items-center gap-3 transition-all duration-300 md:static">
               <Logo />
-              <span className="text-primary-content">john_doe</span>
+              <span className="text-primary-content">Varsil_Suvagiya</span>
             </div>
           </Link>
         )}

@@ -7,11 +7,13 @@ import { FC, useEffect, useRef } from 'react'
 interface TestimonialCardProps {
   testimonial: Testimonial
   handleActiveCard: () => void
+  index: number
 }
 
 const TestimonialCard: FC<TestimonialCardProps> = ({
   testimonial: { name, title, feedback, image, stars },
   handleActiveCard,
+  index,
 }) => {
   const cardRef = useRef<HTMLDivElement>(null)
 
@@ -25,7 +27,7 @@ const TestimonialCard: FC<TestimonialCardProps> = ({
     return () => {
       observer?.disconnect()
     }
-  }, [cardRef.current])
+  }, [cardRef, handleActiveCard])
 
   return (
     <div

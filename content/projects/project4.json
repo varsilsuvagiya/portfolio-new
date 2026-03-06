@@ -1,12 +1,9 @@
 {
   "priority": 4,
-  "title": "Ejucationzz",
-  "shortDescription": "Ejucationzz is a directory site I created for myself using Next.js. On Ejucationzz, you can find free and paid online and offline courses available in Pakistan. 14 academies and 12 main categories, each with subcategories, have been listed.",
-  "cover": "https://res.cloudinary.com/dyvkdwzcj/image/upload/v1598035107/pomodoro-clock_ctp2af.png",
-  "type": "New 🔥",
-  "livePreview": "https://example.com/Ejucationzz",
-  "siteAge": "4 months old",
-  "visitors": "100 Visitors",
-  "githubLink": "",
-  "earned": ""
+  "title": "Stop Watch",
+  "shortDescription": "Unleash precision with our Stopwatch. Master time with split-second accuracy for sports, fitness, and more. User-friendly interface, tactile controls. Count up or down effortlessly, track laps, and achieve goals. Elevate your timing game with this essential tool for measurement and progress.",
+  "cover": "/projects/stopwatch.png",
+  "livePreview": "",
+  "githubLink": "https://github.com/varsilsuvagiya/react-stopwatch",
+  "type": "React 🔥"
 }

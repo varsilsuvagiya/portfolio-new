@@ -1,0 +1,42 @@
+{
+  "navigation": {
+    "about": "About",
+    "projects": "Projects",
+    "experience": "Experience",
+    "testimonials": "Testimonials",
+    "blogs": "Blogs",
+    "services": "Services",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hi, I am",
+    "role": "Full Stack Developer",
+    "description": "I build robust and scalable web applications.",
+    "hireMe": "Hire Me",
+    "linkedIn": "LinkedIn Profile"
+  },
+  "skills": {
+    "title": "My Skills"
+  },
+  "experience": {
+    "title": "My career journey"
+  },
+  "projects": {
+    "title": "Selected projects",
+    "viewAll": "View all projects",
+    "livePreview": "Live Preview"
+  },
+  "services": {
+    "title": "My professional services"
+  },
+  "testimonials": {
+    "title": "Client's Testimonials"
+  },
+  "contact": {
+    "title": "It's time to build something exciting!",
+    "namePlaceholder": "Name",
+    "emailPlaceholder": "Email",
+    "messagePlaceholder": "Message",
+    "submit": "Submit your request"
+  }
+}

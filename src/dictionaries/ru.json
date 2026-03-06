@@ -1,0 +1,42 @@
+{
+  "navigation": {
+    "about": "Обо мне",
+    "projects": "Проекты",
+    "experience": "Опыт",
+    "testimonials": "Отзывы",
+    "blogs": "Блоги",
+    "services": "Услуги",
+    "contact": "Контакты"
+  },
+  "hero": {
+    "greeting": "Привет, я",
+    "role": "Full Stack Разработчик",
+    "description": "Я создаю надежные и масштабируемые веб-приложения.",
+    "hireMe": "Нанять меня",
+    "linkedIn": "Профиль LinkedIn"
+  },
+  "skills": {
+    "title": "Мои Навыки"
+  },
+  "experience": {
+    "title": "Мой профессиональный путь"
+  },
+  "projects": {
+    "title": "Избранные проекты",
+    "viewAll": "Посмотреть все проекты",
+    "livePreview": "Живое превью"
+  },
+  "services": {
+    "title": "Мои профессиональные услуги"
+  },
+  "testimonials": {
+    "title": "Отзывы клиентов"
+  },
+  "contact": {
+    "title": "Пора создать что-то увлекательное!",
+    "namePlaceholder": "Имя",
+    "emailPlaceholder": "Эл. почта",
+    "messagePlaceholder": "Сообщение",
+    "submit": "Отправить"
+  }
+}

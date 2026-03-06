@@ -1,0 +1,42 @@
+{
+  "navigation": {
+    "about": "Acerca de",
+    "projects": "Proyectos",
+    "experience": "Experiencia",
+    "testimonials": "Testimonios",
+    "blogs": "Blogs",
+    "services": "Servicios",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "greeting": "Hola, soy",
+    "role": "Desarrollador Full Stack",
+    "description": "Construyo aplicaciones web robustas y escalables.",
+    "hireMe": "Contrátame",
+    "linkedIn": "Perfil de LinkedIn"
+  },
+  "skills": {
+    "title": "Mis Habilidades"
+  },
+  "experience": {
+    "title": "Mi trayectoria profesional"
+  },
+  "projects": {
+    "title": "Proyectos Seleccionados",
+    "viewAll": "Ver todos los proyectos",
+    "livePreview": "Vista previa en vivo"
+  },
+  "services": {
+    "title": "Mis Servicios Profesionales"
+  },
+  "testimonials": {
+    "title": "Testimonios de Clientes"
+  },
+  "contact": {
+    "title": "¡Es hora de construir algo emocionante!",
+    "namePlaceholder": "Nombre",
+    "emailPlaceholder": "Correo electrónico",
+    "messagePlaceholder": "Mensaje",
+    "submit": "Envía tu solicitud"
+  }
+}

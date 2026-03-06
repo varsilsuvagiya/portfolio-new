@@ -1,8 +1,8 @@
 {
-  "name": "John Doe",
-  "title": "CEO",
-  "feedback": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget sapien egestas fermentum eget auctor justo.",
-  "image": "https://i.pravatar.cc/150?img=12",
+  "name": "Priya Patel",
+  "title": "Product Manager, StartupInc",
+  "feedback": "Working together was a great experience. Highly communicative, understands user needs, and builds intuitive interfaces. The new frontend developed significantly improved our user engagement metrics.",
+  "image": "https://i.pravatar.cc/150?img=5",
   "stars": 5,
-  "createdAt": "2025-01-01"
+  "createdAt": "2024-02-10"
 }

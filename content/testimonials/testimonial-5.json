@@ -1,8 +1,8 @@
 {
-  "name": "John Doe",
-  "title": "CEO",
-  "feedback": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget sapien egestas fermentum eget auctor justo. Nullam sit amet nunc nec purus tincidunt aliquam. Nullam sit amet nunc nec purus tincidunt aliquam.",
-  "image": "https://i.pravatar.cc/150?img=12",
+  "name": "Vikram Singh",
+  "title": "Lead Designer, PixelPerfect",
+  "feedback": "As a designer, it's rare to find a developer who matches design perfectly to code. Everything was executed exactly right, ensuring every pixel was in place while maintaining excellent accessibility.",
+  "image": "https://i.pravatar.cc/150?img=53",
   "stars": 5,
-  "createdAt": "2025-01-01"
+  "createdAt": "2024-10-30"
 }

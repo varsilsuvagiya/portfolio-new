@@ -1,25 +1,33 @@
-import { footerLinks, languages } from '@/appData'
+import { languages } from '@/appData'
 import { socials } from '@/appData/personal'
 import Logo from '../Navbar/Logo'
+import Link from 'next/link'
 
-const Footer = () => {
+type FooterProps = {
+  dict: Record<string, string>
+  locale: string
+}
+
+const Footer = ({ dict, locale }: FooterProps) => {
+  const footerLinks = [
+    { title: dict.projects || 'Projects', href: `/${locale}/#projects` },
+    { title: dict.experience || 'Experience', href: `/${locale}/#experience` },
+    { title: dict.services || 'Services', href: `/${locale}/#services` },
+    { title: dict.testimonials || 'Testimonials', href: `/${locale}/#testimonials` },
+  ]
+
   return (
     <footer className="bg-secondary relative flex min-h-[560px] flex-col justify-between gap-20 overflow-hidden px-4 py-14 md:p-14">
       <div className="relative z-20 grid grid-cols-1 items-start gap-20 md:grid-cols-2 md:gap-12">
         <div>
           <h5 className="mb-8 flex items-center gap-2">
             <Logo width={30} height={24} />
-            <span className="text-neutral text-lg font-medium">Logoipsum</span>
+            <span className="text-neutral text-lg font-medium">Varsil_Suvagiya</span>
           </h5>
           <p className="text-tertiary-content">
-            The first free end-to-end analytics service for the site, designed to work with
-            enterprises of various levels and business segments.
+            Building robust and scalable web applications with a focus on modern 
+            technologies and exceptional user experiences.
           </p>
-          <a
-            href="#"
-            className="text-neutral mt-4 inline-flex items-center gap-2 text-xs hover:underline">
-            More about us <span className="bg-neutral inline-block size-[10px] rounded-full" />
-          </a>
         </div>
 
         <div className="flex flex-wrap gap-8">
@@ -47,8 +55,8 @@ const Footer = () => {
               </li>
             ))}
           </ul>
-          <p className="text-tertiary-content flex flex-col self-end text-right text-xs md:text-center">
-            <span>© 2025 — Copyright</span>
+          <p className="text-tertiary-content flex flex-col self-end text-right text-xs md:text-center" suppressHydrationWarning>
+            <span suppressHydrationWarning>© {new Date().getFullYear()} — Copyright</span>
             <span>All Rights reserved</span>
           </p>
         </div>
@@ -58,22 +66,22 @@ const Footer = () => {
             <div className="flex flex-col">
               <h5 className="text-neutral mb-4 text-lg font-medium">Contact Us</h5>
               <a
-                href="mailto:johndoe@gmail.com"
+                href="mailto:varsilsuvagiya@gmail.com"
                 className="text-tertiary-content hover:text-neutral text-sm font-light transition-colors duration-300">
-                johndoe@gmail.com
+                varsilsuvagiya@gmail.com
               </a>
               <a
                 href="tel:+92 3123456789"
                 className="text-tertiary-content hover:text-neutral text-sm font-light transition-colors duration-300">
-                +92 3123456789
+                +91 9664976355
               </a>
             </div>
             <div>
               <div>
                 <h5 className="text-neutral mb-4 text-lg font-medium">Location</h5>
                 <address className="text-tertiary-content flex flex-col text-sm font-light">
-                  <span>123456, Pakistan</span>
-                  <span>Karachi 22/5/8, Office 4</span>
+                  <span>Surat,Gujarat</span>
+                  <span>India</span>
                 </address>
               </div>
             </div>
@@ -82,12 +90,13 @@ const Footer = () => {
           <div className="md:self-end">
             <p className="text-neutral mb-8 text-sm md:text-right">Languages</p>
             <div className="flex gap-8 md:gap-4 lg:gap-8">
-              {languages.map((language, idx) => (
-                <span
+              {languages.map((language) => (
+                <Link
                   key={language}
-                  className={idx === 0 ? 'text-neutral' : 'text-tertiary-content'}>
+                  href={`/${language.toLowerCase()}`}
+                  className={locale === language.toLowerCase() ? 'text-neutral' : 'text-tertiary-content'}>
                   {language}
-                </span>
+                </Link>
               ))}
             </div>
           </div>

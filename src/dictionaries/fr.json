@@ -1,0 +1,42 @@
+{
+  "navigation": {
+    "about": "À propos",
+    "projects": "Projets",
+    "experience": "Expérience",
+    "testimonials": "Témoignages",
+    "blogs": "Blogs",
+    "services": "Services",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Bonjour, je suis",
+    "role": "Développeur Full Stack",
+    "description": "Je construis des applications web robustes et évolutives.",
+    "hireMe": "Embauchez-Moi",
+    "linkedIn": "Profil LinkedIn"
+  },
+  "skills": {
+    "title": "Mes Compétences"
+  },
+  "experience": {
+    "title": "Mon parcours professionnel"
+  },
+  "projects": {
+    "title": "Projets sélectionnés",
+    "viewAll": "Voir tous les projets",
+    "livePreview": "Aperçu en direct"
+  },
+  "services": {
+    "title": "Mes Services Professionnels"
+  },
+  "testimonials": {
+    "title": "Témoignages de Clients"
+  },
+  "contact": {
+    "title": "Il est temps de construire quelque chose de passionnant !",
+    "namePlaceholder": "Nom",
+    "emailPlaceholder": "E-mail",
+    "messagePlaceholder": "Message",
+    "submit": "Soumettez votre demande"
+  }
+}

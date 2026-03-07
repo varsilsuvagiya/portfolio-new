@@ -162,6 +162,26 @@ export const serviceData = [
     shortDescription: 'Creating server-rendered React applications with Next.js.',
   },
   {
+    icon: SiPython,
+    title: 'Python & Django Backend',
+    shortDescription: 'Building powerful and secure web backends using Python and Django.',
+  },
+  {
+    icon: SiLaravel,
+    title: 'PHP & Laravel Development',
+    shortDescription: 'Developing robust and maintainable web applications with PHP and Laravel.',
+  },
+  {
+    icon: SiMongodb,
+    title: 'Database Management',
+    shortDescription: 'Expertise in SQL and NoSQL databases like MySQL and MongoDB.',
+  },
+  {
+    icon: SiFigma,
+    title: 'UI/UX Design',
+    shortDescription: 'Designing intuitive and beautiful user experiences using Figma.',
+  },
+  {
     icon: TypescriptIcon,
     title: 'TypeScript Development',
     shortDescription: 'Ensuring robust and maintainable code with TypeScript.',
@@ -247,27 +267,28 @@ export type ExperienceItem = {
 }
 
 export const experienceData: ExperienceItem[] = [
-   {
+  {
     type: 'experience',
     title: 'MERN Stack Developer (Trainee)',
     company: 'Trueline Solutions',
     date: 'Nov 2022 - Apr 2023',
-    description: 'Mastered the MERN stack development including MongoDB, Express.js, React, and Node.js. Built real-world projects during the training phase.',
+    description:
+      'Mastered the MERN stack development including MongoDB, Express.js, React, and Node.js. Built real-world projects during the training phase.',
   },
   {
     type: 'experience',
     title: 'Software Engineer',
     company: 'Lathiya Solutions',
     date: 'May 2023 - Aug 2024',
-    description: 'Developing various web applications using React, Next.js, Django, and Node.js. Focus on scalable backend services and responsive frontends.',
+    description:
+      'Developing various web applications using React, Next.js, Django, and Node.js. Focus on scalable backend services and responsive frontends.',
   },
-   {
+  {
     type: 'experience',
     title: 'Software Engineer',
     company: 'Cloudus Infotech',
     date: 'Feb 2026 - Present',
-    description: 'Building modern web applications using Next.js with a focus on performance, scalability, and responsive design.'
+    description:
+      'Building modern web applications using Next.js with a focus on performance, scalability, and responsive design.',
   },
- 
-
 ]

@@ -17,97 +17,99 @@ const Footer = ({ dict, locale }: FooterProps) => {
   ]
 
   return (
-    <footer className="bg-secondary relative flex min-h-[560px] flex-col justify-between gap-20 overflow-hidden px-4 py-14 md:p-14">
-      <div className="relative z-20 grid grid-cols-1 items-start gap-20 md:grid-cols-2 md:gap-12">
-        <div>
-          <h5 className="mb-8 flex items-center gap-2">
+    <footer className="bg-secondary relative flex flex-col gap-10 overflow-hidden px-6 py-12 md:px-16 md:py-16">
+      <div className="relative z-20 flex flex-col justify-between gap-10 md:flex-row md:items-start">
+        <div className="max-w-md">
+          <h5 className="mb-4 flex items-center gap-2">
             <Logo width={30} height={24} />
-            <span className="text-neutral text-lg font-medium">Varsil_Suvagiya</span>
+            <span className="text-neutral text-xl font-semibold tracking-tight">Varsil_Suvagiya</span>
           </h5>
-          <p className="text-tertiary-content">
+          <p className="text-tertiary-content text-sm leading-relaxed">
             Building robust and scalable web applications with a focus on modern 
-            technologies and exceptional user experiences.
+            technologies and exceptional user experiences. Transforming ideas into 
+            elegant digital solutions.
           </p>
-        </div>
-
-        <div className="flex flex-wrap gap-8">
-          {footerLinks.map((link) => (
-            <a
-              href={link.href}
-              key={link.href}
-              className="text-tertiary-content hover:text-neutral transition-colors duration-300 hover:underline">
-              {link.title}.
-            </a>
-          ))}
-        </div>
-      </div>
-
-      <div className="relative z-20 flex flex-col-reverse gap-20 md:grid md:grid-cols-2 md:gap-12">
-        <div className="grid grid-cols-2 gap-4">
-          <ul className="flex flex-col gap-4">
-            {socials.map((item, index) => (
-              <li key={index} className="cursor-pointer bg-transparent">
-                <a
-                  href={item.href}
-                  className="text-neutral transition-color hover:text-neutral/50 h-full w-full duration-300">
-                  {item.icon}
-                </a>
-              </li>
-            ))}
-          </ul>
-          <p className="text-tertiary-content flex flex-col self-end text-right text-xs md:text-center" suppressHydrationWarning>
-            <span suppressHydrationWarning>© {new Date().getFullYear()} — Copyright</span>
-            <span>All Rights reserved</span>
-          </p>
-        </div>
-
-        <div className="flex flex-col justify-between gap-[200px] md:flex-row md:gap-8">
-          <div className="space-y-10 md:self-end">
-            <div className="flex flex-col">
-              <h5 className="text-neutral mb-4 text-lg font-medium">Contact Us</h5>
-              <a
-                href="mailto:varsilsuvagiya@gmail.com"
-                className="text-tertiary-content hover:text-neutral text-sm font-light transition-colors duration-300">
-                varsilsuvagiya@gmail.com
-              </a>
-              <a
-                href="tel:+92 3123456789"
-                className="text-tertiary-content hover:text-neutral text-sm font-light transition-colors duration-300">
-                +91 9664976355
-              </a>
-            </div>
-            <div>
-              <div>
-                <h5 className="text-neutral mb-4 text-lg font-medium">Location</h5>
-                <address className="text-tertiary-content flex flex-col text-sm font-light">
-                  <span>Surat,Gujarat</span>
-                  <span>India</span>
-                </address>
-              </div>
-            </div>
+          <div className="mt-8">
+            <h5 className="text-neutral mb-3 text-sm font-medium uppercase tracking-wider">Socials</h5>
+            <ul className="flex gap-5">
+              {socials.map((item, index) => (
+                <li key={index} className="transition-transform duration-300 hover:-translate-y-1">
+                  <a
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-neutral transition-colors hover:text-neutral/70 block">
+                    {item.icon}
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
+        </div>
 
-          <div className="md:self-end">
-            <p className="text-neutral mb-8 text-sm md:text-right">Languages</p>
-            <div className="flex gap-8 md:gap-4 lg:gap-8">
-              {languages.map((language) => (
-                <Link
-                  key={language}
-                  href={`/${language.toLowerCase()}`}
-                  className={locale === language.toLowerCase() ? 'text-neutral' : 'text-tertiary-content'}>
-                  {language}
-                </Link>
+        <div className="flex flex-col gap-10 md:flex-row md:gap-20">
+          <div>
+            <h5 className="text-neutral mb-5 text-sm font-medium uppercase tracking-wider">Navigation</h5>
+            <div className="flex flex-col gap-3">
+              {footerLinks.map((link) => (
+                <a
+                  href={link.href}
+                  key={link.href}
+                  className="text-tertiary-content hover:text-neutral text-sm transition-colors duration-300">
+                  {link.title}
+                </a>
               ))}
             </div>
           </div>
+
+          <div>
+            <h5 className="text-neutral mb-5 text-sm font-medium uppercase tracking-wider">Contact</h5>
+            <div className="flex flex-col gap-3">
+              <a
+                href="mailto:varsilsuvagiya@gmail.com"
+                className="text-tertiary-content hover:text-neutral text-sm transition-colors duration-300">
+                varsilsuvagiya@gmail.com
+              </a>
+              <a
+                href="tel:+919664976355"
+                className="text-tertiary-content hover:text-neutral text-sm transition-colors duration-300">
+                +91 9664976355
+              </a>
+              <address className="text-tertiary-content not-italic text-sm">
+                Surat, Gujarat, India
+              </address>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div className="bg-neutral/4 absolute top-1/2 -right-[40%] z-0 h-[120dvw] w-[120dvw] -translate-y-1/2 rounded-full p-14 md:top-0 md:-right-[255px] md:-bottom-[450px] md:size-[1030px] md:-translate-y-0 md:p-20">
-        <div className="bg-neutral/4 size-full rounded-full p-14 md:p-20">
-          <div className="bg-neutral/5 size-full rounded-full" />
+      <div className="relative z-20 mt-10 flex flex-col items-center justify-between border-t border-neutral/10 pt-8 md:flex-row">
+        <p className="text-tertiary-content mb-4 text-xs md:mb-0" suppressHydrationWarning>
+          © {new Date().getFullYear()} — <span className="font-medium text-neutral">Varsil Suvagiya</span>. All Rights reserved.
+        </p>
+
+        <div className="flex items-center gap-6">
+          <p className="text-neutral text-xs font-medium uppercase tracking-wider">Languages</p>
+          <div className="flex gap-4">
+            {languages.map((language) => (
+              <Link
+                key={language}
+                href={`/${language.toLowerCase()}`}
+                className={`text-xs transition-colors duration-300 ${
+                  locale === language.toLowerCase() 
+                    ? 'font-semibold text-neutral underline underline-offset-4' 
+                    : 'text-tertiary-content hover:text-neutral'
+                }`}>
+                {language}
+              </Link>
+            ))}
+          </div>
         </div>
       </div>
+
+      {/* Decorative elements */}
+      <div className="bg-neutral/5 absolute -right-20 -bottom-20 z-0 h-64 w-64 rounded-full blur-3xl" />
+      <div className="bg-neutral/5 absolute -left-20 -top-20 z-0 h-64 w-64 rounded-full blur-3xl" />
     </footer>
   )
 }

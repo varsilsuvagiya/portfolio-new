@@ -24,10 +24,12 @@
   "projects": {
     "title": "Ausgewählte Projekte",
     "viewAll": "Alle Projekte anzeigen",
-    "livePreview": "Live-Vorschau"
+    "livePreview": "Live-Vorschau",
+    "githubLink": "Github-Link"
   },
   "services": {
-    "title": "Meine professionellen Dienstleistungen"
+    "title": "Meine professionellen Dienstleistungen",
+    "subtitle": "Ich biete eine breite Palette von Dienstleistungen an, um sicherzustellen, dass Sie über den besten geschriebenen Code verfügen und im Wettbewerb die Nase vorn haben."
   },
   "testimonials": {
     "title": "Kundenstimmen"
@@ -38,5 +40,13 @@
     "emailPlaceholder": "E-Mail",
     "messagePlaceholder": "Nachricht",
     "submit": "Senden Sie Ihre Anfrage"
+  },
+  "footer": {
+    "description": "Entwicklung robuster und skalierbarer Webanwendungen mit Fokus auf moderne Technologien und außergewöhnliche Benutzererfahrungen. Ideen in elegante digitale Lösungen verwandeln.",
+    "socials": "Soziale Medien",
+    "navigation": "Navigation",
+    "contact": "Kontakt",
+    "rights": "Alle Rechte vorbehalten.",
+    "languages": "Sprachen"
   }
 }

@@ -1,4 +1,4 @@
-import { Project, Testimonial } from '@/lib/types'
+import { Project, Testimonial, ExperienceItem, Service } from '@/lib/types'
 import { promises as fs } from 'fs'
 import path from 'path'
 
@@ -9,9 +9,9 @@ const readProjectFile = async (filePath: string): Promise<Project> => {
 }
 
 // Function to get all projects
-const getAllProjects = async (): Promise<Project[]> => {
+const getAllProjects = async (locale: string = 'en'): Promise<Project[]> => {
   try {
-    const projectsPath = path.join(process.cwd(), '/content/projects')
+    const projectsPath = path.join(process.cwd(), `/content/projects/${locale}`)
     const projectsName = await fs.readdir(projectsPath)
 
     const projects = await Promise.all(
@@ -57,4 +57,28 @@ const getAllTestimonials = async (): Promise<Testimonial[]> => {
   }
 }
 
-export { getAllProjects, getAllTestimonials }
+const getAllExperience = async (locale: string = 'en'): Promise<ExperienceItem[]> => {
+  try {
+    const experiencePath = path.join(process.cwd(), `/content/experience/${locale}/experience.json`)
+    const experienceData = await fs.readFile(experiencePath, 'utf8')
+    return JSON.parse(experienceData)
+  } catch (error) {
+    // Handle errors
+    console.error('Error:', error)
+    return []
+  }
+}
+
+const getAllServices = async (locale: string = 'en'): Promise<Service[]> => {
+  try {
+    const servicesPath = path.join(process.cwd(), `/content/services/${locale}/services.json`)
+    const servicesData = await fs.readFile(servicesPath, 'utf8')
+    return JSON.parse(servicesData)
+  } catch (error) {
+    // Handle errors
+    console.error('Error:', error)
+    return []
+  }
+}
+
+export { getAllExperience, getAllProjects, getAllTestimonials, getAllServices }

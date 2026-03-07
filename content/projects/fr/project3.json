@@ -1,0 +1,8 @@
+{
+  "priority": 3,
+  "title": "Federation",
+  "shortDescription": "Il s'agit d'un système interne de saisie de données utilisé pour gérer les dossiers liés aux cas de vols de propriété traités par la police israélienne. Les utilisateurs autorisés peuvent se connecter pour saisir, suivre et gérer les informations.",
+  "cover": "/projects/federatiom.png",
+  "livePreview": "",
+  "type": "Web 🔥"
+}

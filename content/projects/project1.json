@@ -1,9 +1,0 @@
-{
-  "priority": 1,
-  "title": "Weather App",
-  "shortDescription": "Introducing our cutting-edge Weather App – your ultimate companion for staying informed about weather conditions wherever you are! With sleek design and powerful features, our app provides you with accurate and up-to-date weather forecasts to help you plan your day effectively.",
-  "cover": "/projects/weatherapp.png",
-  "livePreview": "",
-  "githubLink": "https://github.com/varsilsuvagiya/react-weather-app",
-  "type": "React 🔥"
-}

@@ -1,24 +1,47 @@
-import { serviceData } from '../../appData'
+import {
+  JavaScriptIcon,
+  NextjsIcon,
+  NodejsIcon,
+  ReactIcon,
+  TailwindCSS,
+  TypescriptIcon,
+} from '@/utils/icons'
+import { SiFigma, SiLaravel, SiMongodb, SiPython } from 'react-icons/si'
 import SectionHeading from '../SectionHeading/SectionHeading'
 import ServiceCard from './ServiceCard'
+import { Dictionary, Service } from '@/lib/types'
 
 type ServiceSectionProps = {
-  dict: Record<string, string>
+  dict: Dictionary['services']
+  data: Service[]
 }
 
-const ServiceSection = ({ dict }: ServiceSectionProps) => {
+const iconMap: Record<string, React.ElementType> = {
+  JavaScriptIcon,
+  ReactIcon,
+  NodejsIcon,
+  NextjsIcon,
+  SiPython,
+  SiLaravel,
+  SiMongodb,
+  SiFigma,
+  TypescriptIcon,
+  TailwindCSS,
+}
+
+const ServiceSection = ({ dict, data }: ServiceSectionProps) => {
   return (
     <section id="services" className="my-14">
       <SectionHeading
         title={`// ${dict.title}`}
-        subtitle="I offer a wide range of services to ensure you have the best written code and stay ahead in the competition."
+        subtitle={dict.subtitle}
       />
 
       <div className="mt-8 grid grid-cols-1 gap-x-8 gap-y-8 md:mt-[3.75rem] md:grid-cols-3">
-        {serviceData.map((service, index) => (
+        {data.map((service, index) => (
           <ServiceCard
             key={index}
-            icon={service.icon}
+            icon={iconMap[service.icon] || JavaScriptIcon}
             title={service.title}
             shortDescription={service.shortDescription}
             index={index}

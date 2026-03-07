@@ -24,10 +24,12 @@
   "projects": {
     "title": "Selected projects",
     "viewAll": "View all projects",
-    "livePreview": "Live Preview"
+    "livePreview": "Live Preview",
+    "githubLink": "Github Link"
   },
   "services": {
-    "title": "My professional services"
+    "title": "My professional services",
+    "subtitle": "I offer a wide range of services to ensure you have the best written code and stay ahead in the competition."
   },
   "testimonials": {
     "title": "Client's Testimonials"
@@ -38,5 +40,13 @@
     "emailPlaceholder": "Email",
     "messagePlaceholder": "Message",
     "submit": "Submit your request"
+  },
+  "footer": {
+    "description": "Building robust and scalable web applications with a focus on modern technologies and exceptional user experiences. Transforming ideas into elegant digital solutions.",
+    "socials": "Socials",
+    "navigation": "Navigation",
+    "contact": "Contact",
+    "rights": "All Rights reserved.",
+    "languages": "Languages"
   }
 }

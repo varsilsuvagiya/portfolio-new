@@ -6,16 +6,17 @@ import ServiceSection from '@/components/Services/ServiceSection'
 import Skills from '@/components/Skills/Skills'
 import TestimonialSection from '@/components/Testimonials/TestimonialSection'
 import ScrollReveal from '@/components/UI/ScrollReveal'
-import { getAllProjects, getAllTestimonials } from '@/services'
+import { getAllExperience, getAllProjects, getAllServices, getAllTestimonials } from '@/services'
 
 import { getDictionary, Locale } from '@/dictionaries'
 
 export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params
   const dict = await getDictionary(locale as Locale)
-  const projects = await getAllProjects()
+  const projects = await getAllProjects(locale.toLowerCase())
   const testimonials = await getAllTestimonials()
-  const { experienceData } = await import('@/appData')
+  const experienceData = await getAllExperience(locale.toLowerCase())
+  const serviceData = await getAllServices(locale.toLowerCase())
 
   return (
     <main>
@@ -29,7 +30,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
           <ProjectSection projects={projects} dict={dict.projects} />
         </ScrollReveal>
         <ScrollReveal duration={0.6}>
-          <ServiceSection dict={dict.services} />
+          <ServiceSection dict={dict.services} data={serviceData} />
         </ScrollReveal>
         <ScrollReveal duration={0.6}>
           <TestimonialSection testimonials={testimonials} dict={dict.testimonials} />

@@ -59,7 +59,7 @@ export default async function RootLayout({
         {children}
         <CursorFollower />
         <ThemeMenu />
-        <Footer dict={dict.navigation} locale={locale} />
+        <Footer dict={dict} locale={locale} />
       </body>
     </html>
   )

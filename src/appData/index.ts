@@ -1,12 +1,5 @@
 // Data for portfolio
-import {
-  JavaScriptIcon,
-  NextjsIcon,
-  NodejsIcon,
-  ReactIcon,
-  TailwindCSS,
-  TypescriptIcon,
-} from '../utils/icons'
+
 import {
   SiCss,
   SiDjango,
@@ -139,59 +132,7 @@ export const projects = [
   },
 ]
 
-// Service Data
-export const serviceData = [
-  {
-    icon: JavaScriptIcon,
-    title: 'JavaScript Development',
-    shortDescription: 'Creating dynamic and interactive web applications using JavaScript.',
-  },
-  {
-    icon: ReactIcon,
-    title: 'React.js Development',
-    shortDescription: 'Building modern and responsive user interfaces with React.js.',
-  },
-  {
-    icon: NodejsIcon,
-    title: 'Node.js Backend',
-    shortDescription: 'Developing scalable server-side applications using Node.js.',
-  },
-  {
-    icon: NextjsIcon,
-    title: 'Next.js Development',
-    shortDescription: 'Creating server-rendered React applications with Next.js.',
-  },
-  {
-    icon: SiPython,
-    title: 'Python & Django Backend',
-    shortDescription: 'Building powerful and secure web backends using Python and Django.',
-  },
-  {
-    icon: SiLaravel,
-    title: 'PHP & Laravel Development',
-    shortDescription: 'Developing robust and maintainable web applications with PHP and Laravel.',
-  },
-  {
-    icon: SiMongodb,
-    title: 'Database Management',
-    shortDescription: 'Expertise in SQL and NoSQL databases like MySQL and MongoDB.',
-  },
-  {
-    icon: SiFigma,
-    title: 'UI/UX Design',
-    shortDescription: 'Designing intuitive and beautiful user experiences using Figma.',
-  },
-  {
-    icon: TypescriptIcon,
-    title: 'TypeScript Development',
-    shortDescription: 'Ensuring robust and maintainable code with TypeScript.',
-  },
-  {
-    icon: TailwindCSS,
-    title: 'Tailwind CSS Styling',
-    shortDescription: 'Designing beautiful and responsive interfaces with Tailwind CSS.',
-  },
-]
+
 
 // Skill List
 export const skillList = [
@@ -258,37 +199,4 @@ export const themes = [
 
 export const languages = ['En', 'Es', 'Fr', 'De', 'Ru']
 
-export type ExperienceItem = {
-  type: 'experience' | 'education'
-  title: string
-  company: string
-  date: string
-  description: string
-}
 
-export const experienceData: ExperienceItem[] = [
-  {
-    type: 'experience',
-    title: 'MERN Stack Developer (Trainee)',
-    company: 'Trueline Solutions',
-    date: 'Nov 2022 - Apr 2023',
-    description:
-      'Mastered the MERN stack development including MongoDB, Express.js, React, and Node.js. Built real-world projects during the training phase.',
-  },
-  {
-    type: 'experience',
-    title: 'Software Engineer',
-    company: 'Lathiya Solutions',
-    date: 'May 2023 - Aug 2024',
-    description:
-      'Developing various web applications using React, Next.js, Django, and Node.js. Focus on scalable backend services and responsive frontends.',
-  },
-  {
-    type: 'experience',
-    title: 'Software Engineer',
-    company: 'Cloudus Infotech',
-    date: 'Feb 2026 - Present',
-    description:
-      'Building modern web applications using Next.js with a focus on performance, scalability, and responsive design.',
-  },
-]

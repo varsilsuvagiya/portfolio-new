@@ -1,0 +1,9 @@
+{
+  "priority": 1,
+  "title": "Expense Tracker App",
+  "shortDescription": "Wir stellen unsere hochmoderne Expense Tracker App vor – Ihr ultimativer Begleiter für die Verwaltung von Finanzen und die Verfolgung von Ausgaben, wo immer Sie sind! Mit ihrem eleganten Design und ihren leistungsstarken Funktionen bietet unsere App Ihnen eine genaue und aktuelle Ausgabenverfolgung, damit Sie Ihr Budget effektiv verwalten können.",
+  "cover": "/projects/exp.png",
+  "livePreview": "",
+  "githubLink": "https://github.com/varsilsuvagiya/expense-tracker",
+  "type": "Next.js + Firebase 🔥"
+}

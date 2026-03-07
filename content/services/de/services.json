@@ -1,0 +1,52 @@
+[
+  {
+    "icon": "JavaScriptIcon",
+    "title": "JavaScript-Entwicklung",
+    "shortDescription": "Erstellung dynamischer und interaktiver Webanwendungen mit JavaScript."
+  },
+  {
+    "icon": "ReactIcon",
+    "title": "React.js-Entwicklung",
+    "shortDescription": "Erstellung moderner und responsiver Benutzeroberflächen mit React.js."
+  },
+  {
+    "icon": "NodejsIcon",
+    "title": "Node.js-Backend",
+    "shortDescription": "Entwicklung skalierbarer serverseitiger Anwendungen mit Node.js."
+  },
+  {
+    "icon": "NextjsIcon",
+    "title": "Next.js-Entwicklung",
+    "shortDescription": "Erstellung von servergerenderten React-Anwendungen mit Next.js."
+  },
+  {
+    "icon": "SiPython",
+    "title": "Python & Django-Backend",
+    "shortDescription": "Aufbau leistungsstarker und sicherer Web-Backends mit Python und Django."
+  },
+  {
+    "icon": "SiLaravel",
+    "title": "PHP & Laravel-Entwicklung",
+    "shortDescription": "Entwicklung robuster und wartbarer Webanwendungen mit PHP und Laravel."
+  },
+  {
+    "icon": "SiMongodb",
+    "title": "Datenbank-Management",
+    "shortDescription": "Expertise in SQL- und NoSQL-Datenbanken wie MySQL und MongoDB."
+  },
+  {
+    "icon": "SiFigma",
+    "title": "UI/UX-Design",
+    "shortDescription": "Gestaltung intuitiver und schöner Benutzererfahrungen mit Figma."
+  },
+  {
+    "icon": "TypescriptIcon",
+    "title": "TypeScript-Entwicklung",
+    "shortDescription": "Sicherstellung eines robusten und wartbaren Codes mit TypeScript."
+  },
+  {
+    "icon": "TailwindCSS",
+    "title": "Tailwind-CSS-Styling",
+    "shortDescription": "Gestaltung schöner und responsiver Oberflächen mit Tailwind CSS."
+  }
+]

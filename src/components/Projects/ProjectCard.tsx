@@ -13,9 +13,10 @@ const IconText: React.FC<{ icon: string; text: string }> = ({ icon, text }) => (
 interface ProjectCardProps {
   data: Project
   index: number
+  dict: Record<string, string>
 }
 
-const ProjectCard: React.FC<ProjectCardProps> = ({ data, index }) => {
+const ProjectCard: React.FC<ProjectCardProps> = ({ data, index, dict }) => {
   const {
     title,
     shortDescription,
@@ -78,7 +79,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ data, index }) => {
               className="text-accent flex gap-2 text-sm underline underline-offset-[3px] transition-all duration-75 ease-linear hover:scale-105 md:text-base"
               target="_blank">
               <PreviewIcon className="h-auto w-[18px] md:w-5" />
-              <span>Live Preview</span>
+              <span>{dict.livePreview || 'Live Preview'}</span>
             </a>
           )}
           {githubLink && (
@@ -87,7 +88,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ data, index }) => {
               className="text-accent flex gap-2 text-sm underline underline-offset-[3px] transition-all duration-75 ease-linear hover:scale-105 md:text-base"
               target="_blank">
               <GithubIcon className="w-[18px] md:w-5" />
-              <span>Github Link</span>
+              <span>{dict.githubLink || 'Github Link'}</span>
             </a>
           )}
         </div>

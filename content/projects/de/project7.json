@@ -1,0 +1,9 @@
+{
+  "priority": 7,
+  "title": "Student Management System",
+  "shortDescription": "Das in Django entwickelte Student Management System ist eine umfassende Plattform zur Optimierung der Verwaltung von Studentenunterlagen, Anwesenheit und Leistung. Es bietet benutzerfreundliche Schnittstellen für Administratoren, Lehrer und Studenten und ermöglicht eine effiziente Datenverarbeitung und Berichterstattung.",
+  "cover": "/projects/stud-mng.png",
+  "livePreview": "",
+  "githubLink": "https://github.com/varsilsuvagiya/student-management-system",
+  "type": "Django 🔥"
+}

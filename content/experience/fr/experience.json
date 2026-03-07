@@ -1,0 +1,23 @@
+[
+  {
+    "type": "experience",
+    "title": "Développeur MERN Stack (Stagiaire)",
+    "company": "Trueline Solutions",
+    "date": "Nov 2022 - Avr 2023",
+    "description": "Maîtrise du développement de la pile MERN, notamment MongoDB, Express.js, React et Node.js. Réalisation de projets concrets pendant la phase de formation."
+  },
+  {
+    "type": "experience",
+    "title": "Ingénieur Logiciel",
+    "company": "Lathiya Solutions",
+    "date": "Mai 2023 - Août 2024",
+    "description": "Développement de diverses applications Web utilisant React, Next.js, Django et Node.js. Accent mis sur les services backend évolutifs et les frontends réactifs."
+  },
+  {
+    "type": "experience",
+    "title": "Ingénieur Logiciel",
+    "company": "Cloudus Infotech",
+    "date": "Fév 2026 - Présent",
+    "description": "Construction d'applications Web modernes utilisant Next.js avec un accent sur la performance, l'évolutivité et le design réactif."
+  }
+]

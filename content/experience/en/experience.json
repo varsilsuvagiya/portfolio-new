@@ -1,0 +1,23 @@
+[
+  {
+    "type": "experience",
+    "title": "MERN Stack Developer (Trainee)",
+    "company": "Trueline Solutions",
+    "date": "Nov 2022 - Apr 2023",
+    "description": "Mastered the MERN stack development including MongoDB, Express.js, React, and Node.js. Built real-world projects during the training phase."
+  },
+  {
+    "type": "experience",
+    "title": "Software Engineer",
+    "company": "Lathiya Solutions",
+    "date": "May 2023 - Aug 2024",
+    "description": "Developing various web applications using React, Next.js, Django, and Node.js. Focus on scalable backend services and responsive frontends."
+  },
+  {
+    "type": "experience",
+    "title": "Software Engineer",
+    "company": "Cloudus Infotech",
+    "date": "Feb 2026 - Present",
+    "description": "Building modern web applications using Next.js with a focus on performance, scalability, and responsive design."
+  }
+]

@@ -1,0 +1,52 @@
+[
+  {
+    "icon": "JavaScriptIcon",
+    "title": "Desarrollo JavaScript",
+    "shortDescription": "Creación de aplicaciones web dinámicas e interactivas utilizando JavaScript."
+  },
+  {
+    "icon": "ReactIcon",
+    "title": "Desarrollo React.js",
+    "shortDescription": "Construcción de interfaces de usuario modernas y responsivas con React.js."
+  },
+  {
+    "icon": "NodejsIcon",
+    "title": "Backend Node.js",
+    "shortDescription": "Desarrollo de aplicaciones escalables en el lado del servidor utilizando Node.js."
+  },
+  {
+    "icon": "NextjsIcon",
+    "title": "Desarrollo Next.js",
+    "shortDescription": "Creación de aplicaciones React renderizadas en el servidor con Next.js."
+  },
+  {
+    "icon": "SiPython",
+    "title": "Backend Python y Django",
+    "shortDescription": "Construcción de backends web potentes y seguros utilizando Python y Django."
+  },
+  {
+    "icon": "SiLaravel",
+    "title": "Desarrollo PHP y Laravel",
+    "shortDescription": "Desarrollo de aplicaciones web robustas y mantenibles con PHP y Laravel."
+  },
+  {
+    "icon": "SiMongodb",
+    "title": "Gestión de Bases de Datos",
+    "shortDescription": "Experiencia en bases de datos SQL y NoSQL como MySQL y MongoDB."
+  },
+  {
+    "icon": "SiFigma",
+    "title": "Diseño UI/UX",
+    "shortDescription": "Diseño de experiencias de usuario intuitivas y hermosas usando Figma."
+  },
+  {
+    "icon": "TypescriptIcon",
+    "title": "Desarrollo TypeScript",
+    "shortDescription": "Garantizar un código robusto y mantenible con TypeScript."
+  },
+  {
+    "icon": "TailwindCSS",
+    "title": "Estilizado con Tailwind CSS",
+    "shortDescription": "Diseño de interfaces hermosas y responsivas con Tailwind CSS."
+  }
+]

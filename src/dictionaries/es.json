@@ -24,10 +24,12 @@
   "projects": {
     "title": "Proyectos Seleccionados",
     "viewAll": "Ver todos los proyectos",
-    "livePreview": "Vista previa en vivo"
+    "livePreview": "Vista previa en vivo",
+    "githubLink": "Enlace de Github"
   },
   "services": {
-    "title": "Mis Servicios Profesionales"
+    "title": "Mis servicios profesionales",
+    "subtitle": "Ofrezco una amplia gama de servicios para asegurar que tenga el mejor código escrito y se mantenga a la vanguardia en la competencia."
   },
   "testimonials": {
     "title": "Testimonios de Clientes"
@@ -38,5 +40,13 @@
     "emailPlaceholder": "Correo electrónico",
     "messagePlaceholder": "Mensaje",
     "submit": "Envía tu solicitud"
+  },
+  "footer": {
+    "description": "Construyendo aplicaciones web robustas y escalables con un enfoque en tecnologías modernas y experiencias de usuario excepcionales. Transformando ideas en soluciones digitales elegantes.",
+    "socials": "Redes Sociales",
+    "navigation": "Navegación",
+    "contact": "Contacto",
+    "rights": "Todos los derechos reservados.",
+    "languages": "Idiomas"
   }
 }

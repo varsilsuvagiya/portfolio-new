@@ -1,0 +1,52 @@
+[
+  {
+    "icon": "JavaScriptIcon",
+    "title": "Разработка на JavaScript",
+    "shortDescription": "Создание динамичных и интерактивных веб-приложений с использованием JavaScript."
+  },
+  {
+    "icon": "ReactIcon",
+    "title": "Разработка на React.js",
+    "shortDescription": "Создание современных и адаптивных пользовательских интерфейсов с помощью React.js."
+  },
+  {
+    "icon": "NodejsIcon",
+    "title": "Backend на Node.js",
+    "shortDescription": "Разработка масштабируемых серверных приложений с использованием Node.js."
+  },
+  {
+    "icon": "NextjsIcon",
+    "title": "Разработка на Next.js",
+    "shortDescription": "Создание серверных React-приложений с использованием Next.js."
+  },
+  {
+    "icon": "SiPython",
+    "title": "Backend на Python и Django",
+    "shortDescription": "Создание мощных и безопасных веб-серверов с использованием Python и Django."
+  },
+  {
+    "icon": "SiLaravel",
+    "title": "Разработка на PHP и Laravel",
+    "shortDescription": "Разработка надежных и поддерживаемых веб-приложений на PHP и Laravel."
+  },
+  {
+    "icon": "SiMongodb",
+    "title": "Управление базами данных",
+    "shortDescription": "Экспертиза в SQL и NoSQL базах данных, таких как MySQL и MongoDB."
+  },
+  {
+    "icon": "SiFigma",
+    "title": "UI/UX дизайн",
+    "shortDescription": "Проектирование интуитивно понятных и красивых интерфейсов с помощью Figma."
+  },
+  {
+    "icon": "TypescriptIcon",
+    "title": "Разработка на TypeScript",
+    "shortDescription": "Обеспечение надежного и поддерживаемого кода с помощью TypeScript."
+  },
+  {
+    "icon": "TailwindCSS",
+    "title": "Стилизация с Tailwind CSS",
+    "shortDescription": "Создание красивых и адаптивных интерфейсов с помощью Tailwind CSS."
+  }
+]

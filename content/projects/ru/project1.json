@@ -1,0 +1,9 @@
+{
+  "priority": 1,
+  "title": "Expense Tracker App",
+  "shortDescription": "Представляем наше передовое приложение Expense Tracker — ваш идеальный помощник для управления финансами и отслеживания расходов, где бы вы ни находились! Благодаря элегантному дизайну и мощным функциям наше приложение обеспечивает точное отслеживание расходов.",
+  "cover": "/projects/exp.png",
+  "livePreview": "",
+  "githubLink": "https://github.com/varsilsuvagiya/expense-tracker",
+  "type": "Next.js + Firebase 🔥"
+}

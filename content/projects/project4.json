@@ -1,9 +1,0 @@
-{
-  "priority": 4,
-  "title": "Stop Watch",
-  "shortDescription": "Unleash precision with our Stopwatch. Master time with split-second accuracy for sports, fitness, and more. User-friendly interface, tactile controls. Count up or down effortlessly, track laps, and achieve goals. Elevate your timing game with this essential tool for measurement and progress.",
-  "cover": "/projects/stopwatch.png",
-  "livePreview": "",
-  "githubLink": "https://github.com/varsilsuvagiya/react-stopwatch",
-  "type": "React 🔥"
-}

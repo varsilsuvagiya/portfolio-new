@@ -1,8 +1,9 @@
+import { StaticImport } from 'next/dist/shared/lib/get-img-props'
 import Image from 'next/image'
 import ScrollReveal from '../UI/ScrollReveal'
 
 interface ServiceCardTypes {
-  icon: any
+  icon: React.ElementType | string | StaticImport
   title: string
   shortDescription: string
   index: number

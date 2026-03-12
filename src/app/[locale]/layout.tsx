@@ -5,6 +5,7 @@ import Footer from '@/components/Footer/Footer'
 import Navbar from '@/components/Navbar/Navbar'
 import CursorFollower from '@/components/UI/CursorFollower'
 import ThemeMenu from '@/components/Theme/ThemeMenu'
+import ChatWidget from '@/components/ChatWidget/ChatWidget'
 import { getDictionary, Locale } from '@/dictionaries'
 import { Fira_Code } from 'next/font/google'
 
@@ -59,6 +60,7 @@ export default async function RootLayout({
         {children}
         <CursorFollower />
         <ThemeMenu />
+        <ChatWidget />
         <Footer dict={dict} locale={locale} />
       </body>
     </html>

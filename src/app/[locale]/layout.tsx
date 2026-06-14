@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Script from 'next/script'
 import '../globals.css'
 
 import Footer from '@/components/Footer/Footer'
@@ -55,6 +56,12 @@ export default async function RootLayout({
   return (
     <html lang={locale} data-theme="dark">
       <body className={`${firaCode.className}`}>
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4530721102662876"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
         <header>
           <Navbar dict={dict.navigation} locale={locale} />
         </header>

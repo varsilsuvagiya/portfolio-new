@@ -4,6 +4,5 @@
   "shortDescription": "WebGlide — ваш идеальный онлайн-помощник по здоровью и фитнесу, предлагающий бесплатные консультации через активную группу в Facebook и премиальные программы персональных тренировок через свой веб-сайт. WebGlide — ваш путь к фитнесу.",
   "cover": "/projects/webglide.png",
   "livePreview": "https://web-glide.vercel.app/",
-  "githubLink": "",
-  "type": "Next.js 🔥"
+  "githubLink": ""
 }

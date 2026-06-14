@@ -4,6 +4,5 @@
   "shortDescription": "Создавайте, управляйте и изучайте стратегии количественной торговли с помощью возможностей ИИ. Стройте свою торговую систему с уверенностью.",
   "cover": "/projects/quant.png",
   "livePreview": "https://quant-finance-hub.vercel.app/",
-  "githubLink": "",
-  "type": "Next.js 🔥"
+  "githubLink": ""
 }

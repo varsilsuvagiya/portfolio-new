@@ -4,6 +4,5 @@
   "shortDescription": "Wir stellen unsere hochmoderne Expense Tracker App vor – Ihr ultimativer Begleiter für die Verwaltung von Finanzen und die Verfolgung von Ausgaben, wo immer Sie sind! Mit ihrem eleganten Design und ihren leistungsstarken Funktionen bietet unsere App Ihnen eine genaue und aktuelle Ausgabenverfolgung, damit Sie Ihr Budget effektiv verwalten können.",
   "cover": "/projects/exp.png",
   "livePreview": "https://expense-tracker-self-rho.vercel.app/",
-  "githubLink": "",
-  "type": "Next.js + Firebase 🔥"
+  "githubLink": ""
 }

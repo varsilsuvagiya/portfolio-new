@@ -4,6 +4,5 @@
   "shortDescription": "Assure-IT es una plataforma SaaS basada en la nube diseñada para agilizar la coordinación de infraestructura, la gestión de permisos, el procesamiento de solicitudes y los flujos de trabajo de comunicación entre organizaciones y solicitantes. Sirve a sectores como servicios públicos, energía, transporte, telecomunicaciones, municipios, defensa y servicios ambientales.",
   "cover": "/projects/assureit.png",
   "livePreview": "https://www.assureit.co.il/en/",
-  "githubLink": "",
-  "type": "PHP 🔥"
+  "githubLink": ""
 }

@@ -4,6 +4,5 @@
   "shortDescription": "WebGlide est votre compagnon ultime en ligne pour la santé et la forme physique, offrant des conseils gratuits via son groupe Facebook actif et des programmes d'entraînement personnel premium via son site Web. WebGlide est votre destination.",
   "cover": "/projects/webglide.png",
   "livePreview": "https://web-glide.vercel.app/",
-  "githubLink": "",
-  "type": "Next.js 🔥"
+  "githubLink": ""
 }

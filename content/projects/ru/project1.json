@@ -4,6 +4,5 @@
   "shortDescription": "Представляем наше передовое приложение Expense Tracker — ваш идеальный помощник для управления финансами и отслеживания расходов, где бы вы ни находились! Благодаря элегантному дизайну и мощным функциям наше приложение обеспечивает точное отслеживание расходов.",
   "cover": "/projects/exp.png",
   "livePreview": "https://expense-tracker-self-rho.vercel.app/",
-  "githubLink": "",
-  "type": "Next.js + Firebase 🔥"
+  "githubLink": ""
 }

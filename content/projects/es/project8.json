@@ -4,6 +4,5 @@
   "shortDescription": "Ciphernet es una plantilla moderna y elegante de React JS diseñada para servicios de VPN y ciberseguridad. Ofrece un diseño limpio y receptivo para mostrar funciones como una potente protección en línea, acceso a Internet sin fronteras y uso ilimitado. Ideal para startups.",
   "cover": "/projects/ciphernet.png",
   "livePreview": "https://cipher-net-mu.vercel.app/",
-  "githubLink": "",
-  "type": "React 🔥"
+  "githubLink": ""
 }

@@ -4,6 +4,5 @@
   "shortDescription": "Braoza es una plataforma de tecnología inclusiva y accesibilidad web que ayuda a las empresas a crear experiencias digitales sin barreras. A través de herramientas de accesibilidad adaptativa, funciones de mejora de la visión, modos de lectura adaptados para la dislexia y soporte para usuarios con discapacidades cognitivas, motoras y visuales, Braoza permite a las organizaciones crear sitios web accesibles para todos.",
   "cover": "/projects/braoza.png",
   "livePreview": "https://staging.braoza.com/",
-  "githubLink": "",
-  "type": "Next.js & Tailwind 🔥"
+  "githubLink": ""
 }

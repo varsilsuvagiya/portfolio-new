@@ -4,6 +4,5 @@
   "shortDescription": "Es un sistema interno de entrada de datos utilizado para gestionar registros relacionados con casos de propiedad robada manejados por la Policía de Israel. Los usuarios autorizados pueden iniciar sesión para ingresar, rastrear y gestionar información sobre artículos robados.",
   "cover": "/projects/federatiom.png",
   "livePreview": "https://manage.federation.co.il/",
-  "githubLink": "",
-  "type": "Web 🔥"
+  "githubLink": ""
 }

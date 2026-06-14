@@ -42,6 +42,9 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     creator: '@VarsilSuvagiya',
   },
+  other: {
+    'google-adsense-account': 'ca-pub-4530721102662876',
+  },
 }
 
 export default async function RootLayout({

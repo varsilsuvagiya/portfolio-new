@@ -1,0 +1,9 @@
+{
+  "priority": 3,
+  "title": "Olysim",
+  "shortDescription": "Olysim is a digital travel connectivity platform offering global eSIM and physical SIM solutions for international travelers. It allows users to purchase and activate high-speed mobile data plans digitally, eliminating the need for physical local SIM cards or expensive roaming charges.",
+  "cover": "/projects/olysim.png",
+  "livePreview": "http://olysim.com/",
+  "githubLink": "",
+  "type": "Next.js & Tailwind 🔥"
+}

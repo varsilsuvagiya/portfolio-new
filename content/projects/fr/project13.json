@@ -1,0 +1,9 @@
+{
+  "priority": 1,
+  "title": "Assure-IT",
+  "shortDescription": "Assure-IT est une plateforme SaaS basée sur le cloud conçue pour simplifier la coordination des infrastructures, la gestion des permis, le traitement des demandes et les flux de communication entre les organisations et les demandeurs. Elle s'adresse aux secteurs des services publics, de l'énergie, des transports, des télécommunications, des municipalités, de la défense et de l'environnement.",
+  "cover": "/projects/assureit.png",
+  "livePreview": "https://www.assureit.co.il/en/",
+  "githubLink": "",
+  "type": "PHP 🔥"
+}

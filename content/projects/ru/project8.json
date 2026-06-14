@@ -1,9 +1,9 @@
 {
-  "priority": 8,
+  "priority": 9,
   "title": "CipherNet",
   "shortDescription": "Ciphernet — это современный и стильный шаблон React JS, разработанный для услуг VPN и кибербезопасности. Он предлагает чистый, адаптивный макет для демонстрации функций.",
   "cover": "/projects/ciphernet.png",
-  "livePreview": "",
-  "githubLink": "https://github.com/varsilsuvagiya/cipherNet",
+  "livePreview": "https://cipher-net-mu.vercel.app/",
+  "githubLink": "",
   "type": "React 🔥"
 }

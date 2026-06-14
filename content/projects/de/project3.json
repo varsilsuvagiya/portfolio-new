@@ -1,8 +1,9 @@
 {
-  "priority": 3,
+  "priority": 2,
   "title": "Federation",
   "shortDescription": "Es handelt sich um ein internes Datenerfassungssystem für die Verwaltung von Aufzeichnungen im Zusammenhang mit Diebstahlsfällen, die von der israelischen Polizei bearbeitet werden. Autorisierte Benutzer können sich anmelden, um Informationen über gestohlene Gegenstände einzugeben, zu verfolgen und zu verwalten.",
   "cover": "/projects/federatiom.png",
-  "livePreview": "",
+  "livePreview": "https://manage.federation.co.il/",
+  "githubLink": "",
   "type": "Web 🔥"
 }

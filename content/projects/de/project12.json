@@ -1,0 +1,9 @@
+{
+  "priority": 4,
+  "title": "Braoza",
+  "shortDescription": "Braoza ist eine Plattform für Barrierefreiheit im Web und integrative Technologie, die Unternehmen dabei unterstützt, barrierefreie digitale Erlebnisse zu schaffen. Durch anpassbare Barrierefreiheits-Tools, Sehhilfen, legastheniefreundliche Lesemodi und Unterstützung für Benutzer mit kognitiven, motorischen und visuellen Beeinträchtigungen ermöglicht Braoza den Aufbau von Websites, die für alle zugänglich sind.",
+  "cover": "/projects/braoza.png",
+  "livePreview": "https://staging.braoza.com/",
+  "githubLink": "",
+  "type": "Next.js & Tailwind 🔥"
+}

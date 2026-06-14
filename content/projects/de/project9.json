@@ -1,9 +1,9 @@
 {
-  "priority": 9,
+  "priority": 10,
   "title": "WebGlide",
   "shortDescription": "WebGlide ist Ihr ultimativer Online-Begleiter für Gesundheit und Fitness und bietet kostenlose Beratung über seine aktive Facebook-Gruppe und Premium-Personal-Training-Programme über seine Website. Als erstes digitales Fitness-Manifest möchte WebGlide Ihre erste Adresse sein, wenn Sie an Fitness denken.",
   "cover": "/projects/webglide.png",
-  "livePreview": "",
-  "githubLink": "https://github.com/varsilsuvagiya/webGlide",
+  "livePreview": "https://web-glide.vercel.app/",
+  "githubLink": "",
   "type": "Next.js 🔥"
 }

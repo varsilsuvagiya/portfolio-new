@@ -1,9 +1,9 @@
 {
-  "priority": 8,
+  "priority": 9,
   "title": "CipherNet",
   "shortDescription": "Ciphernet is a modern and sleek React JS template designed for VPN and cybersecurity services. It offers a clean, responsive layout to showcase features like powerful online protection, borderless internet access, and unlimited usage. Ideal for startups or businesses offering secure digital solutions.",
   "cover": "/projects/ciphernet.png",
-  "livePreview": "",
-  "githubLink": "https://github.com/varsilsuvagiya/cipherNet",
+  "livePreview": "https://cipher-net-mu.vercel.app/",
+  "githubLink": "",
   "type": "React 🔥"
 }

@@ -1,9 +1,9 @@
 {
-  "priority": 2,
+  "priority": 6,
   "title": "Quant Finance Hub",
   "shortDescription": "Créez, gérez et apprenez des stratégies de trading quantitatif grâce à la puissance de l'IA. Construisez votre système de trading en toute confiance.",
   "cover": "/projects/quant.png",
-  "livePreview": "",
-  "githubLink": "https://github.com/varsilsuvagiya/quant-finance-hub",
+  "livePreview": "https://quant-finance-hub.vercel.app/",
+  "githubLink": "",
   "type": "Next.js 🔥"
 }

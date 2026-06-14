@@ -1,9 +1,9 @@
 {
-  "priority": 2,
+  "priority": 6,
   "title": "Quant Finance Hub",
   "shortDescription": "Erstellen, verwalten und erlernen Sie quantitative Handelsstrategien mit der Kraft der KI. Bauen Sie Ihr Handelssystem mit Vertrauen auf.",
   "cover": "/projects/quant.png",
-  "livePreview": "",
-  "githubLink": "https://github.com/varsilsuvagiya/quant-finance-hub",
+  "livePreview": "https://quant-finance-hub.vercel.app/",
+  "githubLink": "",
   "type": "Next.js 🔥"
 }

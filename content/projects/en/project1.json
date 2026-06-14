@@ -1,9 +1,9 @@
 {
-  "priority": 1,
+  "priority": 5,
   "title": "Expense Tracker App",
   "shortDescription": "Introducing our cutting-edge Expense Tracker App – your ultimate companion for managing finances and tracking expenses wherever you are! With sleek design and powerful features, our app provides you with accurate and up-to-date expense tracking to help you manage your budget effectively.",
   "cover": "/projects/exp.png",
-  "livePreview": "",
-  "githubLink": "https://github.com/varsilsuvagiya/expense-tracker",
+  "livePreview": "https://expense-tracker-self-rho.vercel.app/",
+  "githubLink": "",
   "type": "Next.js + Firebase 🔥"
 }

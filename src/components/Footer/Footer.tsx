@@ -11,6 +11,8 @@ const Footer = ({ dict }: FooterProps) => {
     label: dict.navigation[id],
     href: `/#${id}`,
   }))
+  // Real pages (not just homepage anchors) so every page links to the profile and project index.
+  nav.push({ label: 'Profile', href: '/about' }, { label: 'All projects', href: '/projects' })
   const socials = [
     { label: 'GitHub', href: personal.github },
     { label: 'LinkedIn', href: personal.linkedin },

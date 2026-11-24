@@ -2,10 +2,6 @@ import type { Metadata } from 'next'
 import Script from 'next/script'
 import './globals.css'
 
-import { education } from '@/appData/education'
-import { experience } from '@/appData/experience'
-import { personal } from '@/appData/personal'
-import { skillGroups } from '@/appData/skills'
 import ChatWidget from '@/components/ChatWidget/ChatWidget'
 import FloatingDock from '@/components/UI/FloatingDock'
 import Footer from '@/components/Footer/Footer'
@@ -15,6 +11,7 @@ import Cursor from '@/components/UI/Cursor'
 import MotionProvider from '@/components/UI/MotionProvider'
 import { getDictionary } from '@/dictionaries'
 import { defaultLocale } from '@/i18n'
+import { SITE_URL, abs, identity, jsonLd, personSchema, websiteSchema } from '@/lib/site'
 import { Fira_Code, Geist, Inter } from 'next/font/google'
 
 // Geist: all text. Inter: Cyrillic fallback only (Geist has none).
@@ -27,58 +24,35 @@ const firaCode = Fira_Code({
   display: 'swap',
 })
 
-const title = 'Varsil Suvagiya | Full-Stack Web Developer in Surat'
-
-const description =
-  "Skilled full-stack web developer in Surat. I build responsive, user-friendly websites with React, NextJS, and NodeJS. Let's bring your vision to life. Hire me today!"
-
-const url = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'
-const siteUrl = new URL(url)
-
 export const metadata: Metadata = {
-  title,
-  description,
+  metadataBase: new URL(SITE_URL),
+  // Child pages set their own title via the template; the homepage uses the default.
+  title: { default: identity.title, template: `%s | ${identity.name}` },
+  description: identity.description,
+  applicationName: `${identity.name} — Portfolio`,
+  authors: [{ name: identity.name, url: abs('/about') }],
+  creator: identity.name,
   category: 'technology',
-  metadataBase: siteUrl,
-  alternates: {
-    canonical: url,
-  },
+  // Only the homepage is canonical to '/'; every other page declares its own canonical.
+  alternates: { canonical: '/' },
+  robots: { index: true, follow: true, googleBot: { index: true, follow: true, 'max-image-preview': 'large' } },
   openGraph: {
-    title,
-    description,
-    url,
-    siteName: 'Varsil Suvagiya Portfolio',
     type: 'website',
+    url: '/',
+    siteName: `${identity.name} — Portfolio`,
+    title: identity.title,
+    description: identity.description,
+    locale: 'en_US',
   },
-  twitter: {
-    title,
-    description,
-    card: 'summary_large_image',
-    creator: '@VarsilSuvagiya',
+  twitter: { card: 'summary_large_image', title: identity.title, description: identity.description, images: ['/opengraph-image'] },
+  verification: {
+    // Set these in the hosting env after adding the site in Google Search Console / Bing Webmaster Tools.
+    google: process.env.GOOGLE_SITE_VERIFICATION || undefined,
+    other: process.env.BING_SITE_VERIFICATION ? { 'msvalidate.01': process.env.BING_SITE_VERIFICATION } : undefined,
   },
   other: {
     'google-adsense-account': 'ca-pub-4530721102662876',
   },
-}
-
-// Structured data generated from the same source files as the page content.
-const personJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'Person',
-  name: personal.name,
-  url,
-  email: `mailto:${personal.email}`,
-  jobTitle: experience[0].role,
-  worksFor: { '@type': 'Organization', name: experience[0].company },
-  alumniOf: education.map((e) => ({ '@type': 'CollegeOrUniversity', name: e.institution })),
-  address: {
-    '@type': 'PostalAddress',
-    addressLocality: personal.address.city,
-    addressRegion: personal.address.region,
-    addressCountry: personal.address.country,
-  },
-  sameAs: [personal.github, personal.linkedin],
-  knowsAbout: skillGroups.flatMap((g) => g.items),
 }
 
 // Applies the saved theme before first paint so dark mode doesn't flash light. Unknown/stale values keep the light default.
@@ -97,7 +71,7 @@ export default async function RootLayout({
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd).replace(/</g, '\\u003c') }}
+          dangerouslySetInnerHTML={{ __html: jsonLd([personSchema, websiteSchema]) }}
         />
       </head>
       <body>

@@ -1,15 +1,19 @@
 import { projects } from '@/appData/projects'
+import { abs } from '@/lib/site'
 import type { MetadataRoute } from 'next'
 
+// Only canonical, indexable, 200-status URLs (no redirects such as /en, no hash fragments).
+// Single language, so no hreflang alternates are needed.
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = `${process.env.NEXT_PUBLIC_SITE_URL}`
+  const now = new Date()
   return [
-    { url: base, lastModified: new Date(), changeFrequency: 'weekly', priority: 1 },
-    { url: `${base}/projects`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.9 },
+    { url: abs('/'), lastModified: now, changeFrequency: 'monthly', priority: 1 },
+    { url: abs('/about'), lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
+    { url: abs('/projects'), lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     ...projects.map((p) => ({
-      url: `${base}/projects/${p.slug}`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly' as const,
+      url: abs(`/projects/${p.slug}`),
+      lastModified: now,
+      changeFrequency: 'yearly' as const,
       priority: 0.7,
     })),
   ]

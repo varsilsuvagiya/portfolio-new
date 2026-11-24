@@ -5,6 +5,7 @@ import MaskText from '@/components/UI/MaskText'
 import ScrollReveal from '@/components/UI/ScrollReveal'
 import { getDictionary } from '@/dictionaries'
 import { hostOf } from '@/lib/embed'
+import { PERSON_ID, WEBSITE_ID, abs, breadcrumbs, jsonLd } from '@/lib/site'
 import { pad2 } from '@/utils'
 import { ArrowUpRightIcon } from '@/utils/icons'
 import type { Metadata } from 'next'
@@ -22,7 +23,14 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
   if (!project) return {}
   const dict = await getDictionary()
   const copy = dict.projects[project.slug]
-  return { title: `${project.name} — ${copy.tagline} | Varsil Suvagiya`, description: copy.summary }
+  const path = `/projects/${project.slug}`
+  const title = `${project.name} — ${copy.tagline}`
+  return {
+    title,
+    description: copy.summary,
+    alternates: { canonical: path },
+    openGraph: { type: 'article', url: path, title, description: copy.summary, images: ['/opengraph-image'] },
+  }
 }
 
 // Full case study for one project: auto-scrolling capture (or screenshot), summary, every contribution, stack, link.
@@ -37,9 +45,36 @@ export default async function ProjectPage({ params }: { params: Params }) {
   const prev = projects[(index - 1 + projects.length) % projects.length]
   const next = projects[(index + 1) % projects.length]
   const alt = dict.work.screenshotAlt.replace('{name}', project.name)
+  const path = `/projects/${project.slug}`
+  const schema = jsonLd([
+    breadcrumbs([
+      { name: 'Home', path: '/' },
+      { name: dict.work.allTitle, path: '/projects' },
+      { name: project.name, path },
+    ]),
+    {
+      '@type': 'WebPage',
+      '@id': `${abs(path)}#webpage`,
+      url: abs(path),
+      name: `${project.name} — ${copy.tagline}`,
+      description: copy.summary,
+      isPartOf: { '@id': WEBSITE_ID },
+      author: { '@id': PERSON_ID },
+      about: {
+        '@type': 'CreativeWork',
+        name: project.name,
+        description: copy.summary,
+        url: project.url,
+        creator: { '@id': PERSON_ID },
+        ...(project.stack.length ? { keywords: project.stack.join(', ') } : {}),
+        ...(project.image ? { image: abs(project.image) } : {}),
+      },
+    },
+  ])
 
   return (
     <main id="main" className="pt-32 pb-24 md:pt-40 md:pb-32">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: schema }} />
       <article className="mx-auto max-w-[1440px] px-5 md:px-10">
         <Link
           href={`/projects`}
@@ -57,6 +92,13 @@ export default async function ProjectPage({ params }: { params: Params }) {
               <MaskText text={project.name} onMount />
             </h1>
             <p className="text-tertiary-content mt-4 text-xl md:text-2xl">{copy.tagline}</p>
+            <p className="text-tertiary-content mt-4 text-sm">
+              Case study by{' '}
+              <Link href="/about" className="text-neutral hover:text-accent underline-offset-4 hover:underline">
+                Varsil Suvagiya
+              </Link>
+              , Full-Stack Software Engineer
+            </p>
           </div>
           <div className="md:col-span-4 md:text-right">
             <a

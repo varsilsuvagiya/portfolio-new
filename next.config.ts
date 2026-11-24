@@ -1,6 +1,8 @@
 import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
+  // Lets a verification build run in a separate folder while `next dev` uses .next
+  distDir: process.env.NEXT_DIST_DIR || '.next',
   pageExtensions: ['js', 'jsx', 'ts', 'tsx'],
 
   images: {

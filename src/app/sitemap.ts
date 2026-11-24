@@ -1,32 +1,16 @@
+import { projects } from '@/appData/projects'
 import type { MetadataRoute } from 'next'
 
-export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL!
-
+export default function sitemap(): MetadataRoute.Sitemap {
+  const base = `${process.env.NEXT_PUBLIC_SITE_URL}`
   return [
-    {
-      url: baseUrl,
+    { url: base, lastModified: new Date(), changeFrequency: 'weekly', priority: 1 },
+    { url: `${base}/projects`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.9 },
+    ...projects.map((p) => ({
+      url: `${base}/projects/${p.slug}`,
       lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 1,
-    },
-    {
-      url: `${baseUrl}/#projects`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/#services`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/#contact`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    })),
   ]
 }

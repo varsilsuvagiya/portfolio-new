@@ -1,8 +1,0 @@
-{
-  "priority": 2,
-  "title": "Federation",
-  "shortDescription": "It is an internal data-entry system used for managing records related to stolen property cases handled by the Israel Police. Authorized users can log in to enter, track, and manage information about stolen items that have been recovered or reported.",
-  "cover": "/projects/federatiom.png",
-  "livePreview": "https://manage.federation.co.il/",
-  "githubLink": ""
-}

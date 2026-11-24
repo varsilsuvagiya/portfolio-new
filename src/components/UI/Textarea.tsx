@@ -1,22 +1,20 @@
 import { FC, TextareaHTMLAttributes } from 'react'
 
 interface TextareaProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {
-  label?: string
-  id?: string
+  label: string
+  id: string
 }
 
-const Textarea: FC<TextareaProps> = ({ id, label, ...props }) => {
+const Textarea: FC<TextareaProps> = ({ id, label, className = '', ...props }) => {
   return (
-    <div className="mb-4 flex w-full flex-col gap-2">
-      {label && (
-        <label htmlFor={id} className="text-neutral text-base">
-          {label}
-        </label>
-      )}
+    <div className={`flex flex-col gap-2 ${className}`}>
+      <label htmlFor={id} className="text-tertiary-content font-mono text-[11px] tracking-[0.2em] uppercase">
+        {label}
+      </label>
       <textarea
         id={id}
         {...props}
-        className="border-border focus:ring-accent text-neutral w-full resize-none rounded-lg border p-[10px] placeholder:font-thin focus:ring-2 focus:outline-none"
+        className="border-border bg-card text-neutral focus:border-accent focus:ring-accent/15 rounded-xl focus:ring-4 w-full resize-none border px-4 py-3 transition-colors duration-300 outline-none"
       />
     </div>
   )

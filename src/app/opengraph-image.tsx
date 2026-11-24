@@ -3,7 +3,7 @@ import { ImageResponse } from 'next/og'
 export const runtime = 'edge'
 
 // Image metadata
-export const alt = 'SOLOPRENEUR'
+export const alt = 'Varsil Suvagiya | Full-Stack Software Engineer'
 
 export const size = {
   width: 1200,
@@ -30,7 +30,7 @@ export default async function Image() {
           Varsil Suvagiya | Full-Stack Web Developer in Surat
         </h1>
         <h2 style={{ fontSize: 40, color: 'white', marginTop: 30 }}>
-          Crafting innovative solutions to solve real-world problems
+          Full-Stack Software Engineer
         </h2>
       </div>
     ),

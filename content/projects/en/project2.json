@@ -1,8 +1,0 @@
-{
-  "priority": 6,
-  "title": "Quant Finance Hub",
-  "shortDescription": "Create, manage, and learn quantitative trading strategies with the power of AI. Build your trading system with confidence.",
-  "cover": "/projects/quant.png",
-  "livePreview": "https://quant-finance-hub.vercel.app/",
-  "githubLink": ""
-}

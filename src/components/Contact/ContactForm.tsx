@@ -1,46 +1,35 @@
 'use client'
 
 import action from '@/actions/contact-form'
+import type { Dictionary } from '@/dictionaries'
 import { useActionState } from 'react'
 import Button from '../UI/Button'
 import Input from '../UI/Input'
 import Textarea from '../UI/Textarea'
 
-type ContactFormProps = {
-  dict?: Record<string, string>
-}
-
-const ContactForm = ({ dict }: ContactFormProps) => {
+const ContactForm = ({ dict }: { dict: Dictionary['contact'] }) => {
   const [status, formAction, isPending] = useActionState(action, null)
 
   if (status?.success) {
     return (
-      <p className="text-accent self-center text-center text-2xl font-medium">{status.message}</p>
+      <p role="status" className="text-accent text-2xl font-medium">
+        {status.message}
+      </p>
     )
   }
 
   return (
-    <form action={formAction}>
-      <Input label={dict?.namePlaceholder || "Full name"} id="name" name="name" placeholder={dict?.namePlaceholder || "Your name here"} required />
-      <Input
-        label={dict?.emailPlaceholder || "Email address"}
-        id="email"
-        type="email"
-        name="email"
-        placeholder={dict?.emailPlaceholder || "Your email address here"}
-        required
-      />
-      <Input label={dict?.subjectPlaceholder || "Subject"} id="subject" name="subject" placeholder={dict?.subjectPlaceholder || "Your subject here"} />
-      <Textarea
-        label={dict?.messagePlaceholder || "Message"}
-        id="message"
-        name="message"
-        placeholder={dict?.messagePlaceholder || "Your message here"}
-        rows={7}
-        required
-      />
-      {!status?.success && <p className="my-2 font-light text-red-600">{status?.message}</p>}
-      <Button text={isPending ? 'Submitting...' : (dict?.submit || 'Submit')} disabled={isPending} />
+    <form action={formAction} className="grid gap-5 sm:grid-cols-2">
+      <Input label={dict.namePlaceholder} id="name" name="name" autoComplete="name" required />
+      <Input label={dict.emailPlaceholder} id="email" type="email" name="email" autoComplete="email" required />
+      <Input label={dict.subjectPlaceholder} id="subject" name="subject" required className="sm:col-span-2" />
+      <Textarea label={dict.messagePlaceholder} id="message" name="message" rows={6} required className="sm:col-span-2" />
+      <div className="flex flex-wrap items-center gap-4 sm:col-span-2">
+        <Button text={isPending ? dict.submitting : dict.submit} disabled={isPending} />
+        <p role="status" aria-live="polite" className="text-base font-medium text-red-500">
+          {status && !status.success ? status.message : ''}
+        </p>
+      </div>
     </form>
   )
 }

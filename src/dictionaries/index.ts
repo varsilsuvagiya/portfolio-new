@@ -1,15 +1,10 @@
 import 'server-only'
 
-export type Locale = 'en' | 'es' | 'fr' | 'de' | 'ru'
+import en from './en.json'
+import type { Locale } from '@/i18n'
 
-const dictionaries = {
-  en: () => import('./en.json').then((module) => module.default),
-  es: () => import('./es.json').then((module) => module.default),
-  fr: () => import('./fr.json').then((module) => module.default),
-  de: () => import('./de.json').then((module) => module.default),
-  ru: () => import('./ru.json').then((module) => module.default),
-}
+export type { Locale }
+export type Dictionary = typeof en
 
-export const getDictionary = async (locale: Locale) => {
-  return dictionaries[locale]?.() ?? dictionaries.en()
-}
+// Single language: the locale argument is accepted for call-site compatibility only.
+export const getDictionary = async (...args: [Locale?]): Promise<Dictionary> => (void args, en)

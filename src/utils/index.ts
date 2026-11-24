@@ -1,73 +1,15 @@
-import { Heading } from '@/lib/types'
-
-export function formatDate(dateString: string): string {
-  const date = new Date(dateString)
-
-  const day = date.getDate()
-  const month = date.toLocaleString('default', { month: 'long' })
-  const year = date.getFullYear()
-
-  const daySuffix = getDaySuffix(day)
-
-  return `${day}${daySuffix} ${month} ${year}`
-}
-
-function getDaySuffix(day: number): string {
-  if (day > 3 && day < 21) return 'th'
-  switch (day % 10) {
-    case 1:
-      return 'st'
-    case 2:
-      return 'nd'
-    case 3:
-      return 'rd'
-    default:
-      return 'th'
-  }
-}
-
-export const getNestedHeadings = (headingElements: Element[]) => {
-  const nestedHeadings: Heading[] = []
-
-  headingElements.forEach((heading) => {
-    const { textContent: title = '', id } = heading
-
-    if (!title) return false
-
-    if (heading.nodeName === 'H2') {
-      nestedHeadings.push({ id, title, items: [] })
-    } else if (heading.nodeName === 'H3') {
-      if (nestedHeadings.length > 0) {
-        nestedHeadings[nestedHeadings.length - 1].items.push({
-          id,
-          title,
-          items: [],
-        })
-      } else {
-        nestedHeadings.push({ id, title, items: [] })
-      }
-    }
-  })
-
-  return nestedHeadings
-}
-
-export function isInViewport(element: HTMLElement, callback: () => void, threshold = 0.4) {
-  const observer = new IntersectionObserver(
-    (entries) => {
-      const [entry] = entries
-
-      if (entry.isIntersecting) {
-        console.log('Element has entered the viewport')
-        callback()
-      }
-    },
-    {
-      threshold: threshold,
-    },
+// "2026-02" → "Feb 2026" in the visitor's language. UTC avoids month shifts from server timezones.
+export const formatMonth = (yearMonth: string, locale: string) =>
+  new Intl.DateTimeFormat(locale, { month: 'short', year: 'numeric', timeZone: 'UTC' }).format(
+    new Date(`${yearMonth}-01T00:00:00Z`),
   )
 
-  observer.observe(element)
+export const formatRange = (start: string, end: string | null, locale: string, present: string) =>
+  `${formatMonth(start, locale)} – ${end ? formatMonth(end, locale) : present}`
 
-  return observer
-}
+export const formatDay = (iso: string, locale: string) =>
+  new Intl.DateTimeFormat(locale, { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' }).format(
+    new Date(iso),
+  )
+
+export const pad2 = (n: number) => String(n).padStart(2, '0')

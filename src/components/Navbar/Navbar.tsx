@@ -1,72 +1,142 @@
 'use client'
 
+import type { Dictionary } from '@/dictionaries'
+import { BurgerIcon, CloseIcon } from '@/utils/icons'
+import { AnimatePresence, motion, useMotionValueEvent, useScroll } from 'framer-motion'
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
-import { useState } from 'react'
-import { BurgerIcon, CloseIcon } from '../../utils/icons'
-import Logo from './Logo'
+import { useEffect, useState } from 'react'
+import ThemeToggle from '../Theme/ThemeToggle'
+import { EASE_OUT_EXPO } from '../UI/ScrollReveal'
+
+const SECTIONS = ['about', 'expertise', 'work', 'experience', 'contact'] as const
 
 type NavbarProps = {
-  dict: Record<string, string>
-  locale: string
+  dict: Dictionary['navigation']
 }
 
-const Navbar = ({ dict, locale }: NavbarProps) => {
-  const navItems = [
-    { label: dict.home || 'Home', href: `/${locale}` },
-    { label: dict.projects || 'Projects', href: `/${locale}/#projects` },
-    { label: dict.experience || 'Experience', href: `/${locale}/#experience` },
-    { label: dict.services || 'Services', href: `/${locale}/#services` },
-    { label: dict.contact || 'Contact-me', href: `/${locale}/#contact` },
-  ]
-  const [isVisible, setIsVisible] = useState(false)
-  const pathname = usePathname()
+// Minimal floating pill: transparent at the top, frosted once scrolled; active section gets a sliding highlight.
+const Navbar = ({ dict }: NavbarProps) => {
+  const [scrolled, setScrolled] = useState(false)
+  const [open, setOpen] = useState(false)
+  const [active, setActive] = useState<string | null>(null)
+  const { scrollY } = useScroll()
 
-  const toggleMenu = () => {
-    setIsVisible(!isVisible)
-  }
+  useMotionValueEvent(scrollY, 'change', (y) => setScrolled(y > 40))
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => entries.forEach((e) => e.isIntersecting && setActive(e.target.id)),
+      { rootMargin: '-45% 0px -50% 0px' },
+    )
+    SECTIONS.forEach((id) => {
+      const el = document.getElementById(id)
+      if (el) observer.observe(el)
+    })
+    return () => observer.disconnect()
+  }, [])
+
+  useEffect(() => {
+    if (!open) return
+    const onKey = (e: KeyboardEvent) => e.key === 'Escape' && setOpen(false)
+    document.addEventListener('keydown', onKey)
+    document.body.style.overflow = 'hidden'
+    return () => {
+      document.removeEventListener('keydown', onKey)
+      document.body.style.overflow = ''
+    }
+  }, [open])
+
+  const items = SECTIONS.map((id) => ({ id, label: dict[id], href: `/#${id}` }))
 
   return (
-    <nav className="bg-primary border-border h-16 overflow-hidden border-b">
-      <div className="mx-auto flex h-full w-dvw max-w-[1200px] items-center justify-between px-4 py-1">
-        {isVisible ? (
-          <div className="text-primary-content md:hidden">Menu</div>
-        ) : (
-          <Link href={`/${locale}`}>
-            <div className="animate-fade-up text-primary-content relative flex items-center gap-3 transition-all duration-300 md:static">
-              <Logo />
-              <span className="text-primary-content">Varsil_Suvagiya</span>
-            </div>
+    <>
+      <motion.header
+        initial={{ y: -20, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.9, delay: 0.15, ease: EASE_OUT_EXPO }}
+        className="pointer-events-none fixed inset-x-0 top-3 z-50 flex justify-center px-3 md:top-5">
+        <nav
+          aria-label="Primary"
+          className={`pointer-events-auto flex w-full max-w-[1440px] items-center justify-between rounded-full border py-1.5 pr-1.5 pl-5 transition-[background-color,border-color,box-shadow] duration-500 md:w-auto md:justify-start md:gap-2 ${
+            scrolled || open
+              ? 'bg-primary/75 border-border shadow-[0_10px_40px_-12px_rgba(0,0,0,0.35)] backdrop-blur-xl'
+              : 'border-transparent'
+          }`}>
+          <Link href="/" className="text-neutral flex items-center gap-2 pr-2 font-mono text-sm">
+            <span aria-hidden="true" className="bg-accent size-1.5 rounded-full" />
+            <span>varsil.suvagiya</span>
           </Link>
+
+          <span aria-hidden="true" className="bg-border hidden h-4 w-px md:block" />
+
+          <ul className="hidden items-center md:flex">
+            {items.map(({ id, label, href }) => (
+              <li key={id} className="relative">
+                {active === id && (
+                  <motion.span
+                    layoutId="nav-active"
+                    className="bg-secondary absolute inset-0 rounded-full"
+                    transition={{ type: 'spring', stiffness: 380, damping: 32 }}
+                  />
+                )}
+                <a
+                  href={href}
+                  aria-current={active === id ? 'location' : undefined}
+                  className={`relative block rounded-full px-4 py-2 text-sm transition-colors duration-300 ${
+                    active === id ? 'text-neutral' : 'text-tertiary-content hover:text-neutral'
+                  }`}>
+                  {label}
+                </a>
+              </li>
+            ))}
+          </ul>
+
+          <div className="flex items-center">
+            <ThemeToggle label={dict.theme} />
+            <button
+              type="button"
+              onClick={() => setOpen((o) => !o)}
+              aria-expanded={open}
+              aria-controls="mobile-menu"
+              aria-label={open ? dict.close : dict.menu}
+              className="text-neutral grid size-11 place-items-center md:hidden">
+              {open ? <CloseIcon /> : <BurgerIcon />}
+            </button>
+          </div>
+        </nav>
+      </motion.header>
+
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            id="mobile-menu"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="bg-primary fixed inset-0 z-40 overflow-y-auto px-5 pt-24 md:hidden">
+            <ul className="flex flex-col">
+              {items.map(({ id, label, href }, i) => (
+                <motion.li
+                  key={id}
+                  initial={{ opacity: 0, y: 24 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.05 * i, duration: 0.6, ease: EASE_OUT_EXPO }}
+                  className="border-border border-b">
+                  <a
+                    href={href}
+                    onClick={() => setOpen(false)}
+                    className="text-neutral flex items-baseline justify-between py-5 text-4xl font-semibold tracking-[-0.04em]">
+                    {label}
+                    <span className="text-tertiary-content font-mono text-xs">({String(i + 1).padStart(2, '0')})</span>
+                  </a>
+                </motion.li>
+              ))}
+            </ul>
+          </motion.div>
         )}
-
-        <div className="md:hidden">
-          <button onClick={toggleMenu}>
-            {isVisible ? (
-              <CloseIcon className="text-primary-content" />
-            ) : (
-              <BurgerIcon className="text-primary-content" />
-            )}
-          </button>
-        </div>
-
-        <ul
-          className={`${isVisible ? 'flex' : 'hidden'} animate-fade-in bg-primary absolute top-16 left-0 z-10 h-dvh w-dvw flex-col md:static md:top-0 md:flex md:h-full md:w-[72%] md:flex-row lg:w-[70%]`}>
-          {navItems.map(({ label, href }) => (
-            <li
-              key={href}
-              onClick={() => setIsVisible(false)}
-              className="border-border flex items-center border-b px-4 text-2xl md:border-y-0 md:border-e md:text-base md:first:border-s md:last:ml-auto md:last:border-none md:last:px-0 lg:px-8">
-              <Link
-                href={href}
-                className={`text-primary-content hover:text-neutral w-full py-7 transition-all duration-150 md:py-0 ${pathname === href ? 'text-neutral cursor-text' : ''}`}>
-                {label}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </nav>
+      </AnimatePresence>
+    </>
   )
 }
 

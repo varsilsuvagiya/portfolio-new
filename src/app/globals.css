@@ -1,107 +1,43 @@
 @import 'tailwindcss';
 
+/* light: variant — styles that apply only while the light theme is active */
+@custom-variant light (&:where([data-theme='light'], [data-theme='light'] *));
+
+/* Apple-inspired palette — light first.
+   p: page · card: raised white surface · s: soft surface · n: primary text · tc: secondary text (AA)
+   pc: strong secondary · a: accent blue · sc: brand (chat widget) · b: border */
 [data-theme='light'] {
-  --p: #fff;
-  --pc: #0d1a3b;
-  --s: #edeaf4;
-  --sc: #0d1a3b;
-  --tc: #6b7c93;
-  --a: #5565e8;
-  --n: #0d1a3b;
-
-  --b: #dfdcdc;
-  --marquee: #dbe3f7;
-
-  /* for logo */
-  --gradient-start: #5565e8;
-  --gradient-mid: #18f2e5;
-  --gradient-end: #dbe3f7;
+  --p: #f8f9fb;
+  --card: #ffffff;
+  --s: #eef1f5;
+  --n: #17191d;
+  --tc: #6b717b; /* brief asked #777d87 (3.9:1); darkened for AA body text */
+  --pc: #3d424b;
+  --a: #365cf5;
+  --sc: #365cf5;
+  --b: #e5e7eb;
+  --marquee: #eef1f5;
+  --shadow: 0 1px 2px rgba(16, 24, 40, 0.04), 0 12px 32px -12px rgba(16, 24, 40, 0.12);
+  --gradient-start: #365cf5;
+  --gradient-mid: #6b8bff;
+  --gradient-end: #17191d;
 }
 
 [data-theme='dark'] {
-  --p: #011627;
-  --pc: #607b96;
-  --s: #011221;
-  --sc: #5565e8;
-  --tc: #99a1af;
-  --a: #18f2e5;
-  --n: #fff;
-
-  --b: #1e2d3d;
-  --marquee: #062b48;
-
-  /* for logo */
-  --gradient-start: #18f2e5;
-  --gradient-mid: #5cc0fe;
-  --gradient-end: #4ea7ff;
-}
-
-[data-theme='aqua'] {
-  --p: #345da7;
-  --pc: #d4deef;
-
-  --s: #130b43;
-  --sc: #5565e8;
-  --tc: #d4deef;
-  --a: #38ccb2;
-  --n: #fff;
-  --b: #1e2d3d;
-  --marquee: #062b48;
-
-  /* for logo */
-  --gradient-start: #00c1d4;
-  --gradient-mid: #18f2e5;
-  --gradient-end: #ff6f61;
-}
-
-[data-theme='retro'] {
-  --p: #fff3e0;
-  --pc: #6d4c41;
-  --s: #e4d8b4;
-  --sc: #5d4037;
-  --tc: #8c6b5e;
-  --a: #f35248;
-  --n: #6d4c41;
-
-  --b: #ffe0b2;
-  --marquee: #ffcc80;
-
-  /* for logo */
-  --gradient-start: #ffab40;
-  --gradient-mid: #f8d5a0;
-  --gradient-end: #6d4c41;
-}
-
-
-
-[data-theme='monokai'] {
-  --p: #272822;
-  --pc: #f8f8f2;
-  --s: #3e3d32;
-  --sc: #a6e22e;
-  --tc: #75715e;
-  --a: #f92672;
-  --n: #e6db74;
-  --b: #49483e;
-  --marquee: #49483e;
-  --gradient-start: #f92672;
-  --gradient-mid: #fd971f;
-  --gradient-end: #a6e22e;
-}
-
-[data-theme='forest'] {
-  --p: #1e2b20;
-  --pc: #d5e4d1;
-  --s: #283a2a;
-  --sc: #8ebd8b;
-  --tc: #5a775a;
-  --a: #b7da60;
-  --n: #f0f6ee;
-  --b: #324734;
-  --marquee: #324734;
-  --gradient-start: #b7da60;
-  --gradient-mid: #8ebd8b;
-  --gradient-end: #5a775a;
+  --p: #0e0f12;
+  --card: #16181d;
+  --s: #1b1e24;
+  --n: #eceef2;
+  --tc: #9aa0aa;
+  --pc: #c5c9d0;
+  --a: #7c93ff;
+  --sc: #3f5fe8;
+  --b: #262a31;
+  --marquee: #1b1e24;
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 16px 40px -16px rgba(0, 0, 0, 0.6);
+  --gradient-start: #7c93ff;
+  --gradient-mid: #3f5fe8;
+  --gradient-end: #eceef2;
 }
 
 @theme {
@@ -113,22 +49,21 @@
   --color-accent: var(--a);
   --color-neutral: var(--n);
   --color-border: var(--b);
+  --color-card: var(--card);
+  --shadow-soft: var(--shadow);
   --color-marquee: var(--marquee);
   --color-tag: #ffa800;
 
+  --font-sans: var(--font-geist), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-geist), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-fira), ui-monospace, monospace;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+
   --animate-fade-in: fade-in 0.5s ease-out 1;
-  --animate-blink: blink 0.8s ease-in-out infinite;
-  --animate-fade-up: fade-up 0.3s ease-out 1;
-
-  /* --background-image-large-glow: url('../assets/images/bg-lg.svg'); */
-  /* --background-image-small-glow: url('../assets/images/bg-sm.svg'); */
-  --background-image-skill-gradient: linear-gradient(to right, var(--p), #062b48, var(--p));
-
-  --background-position-large-glow-position: 110% 30%;
-  --background-position-small-glow-position: 50% 600%;
-
-  --font-fira-code: Fira Code, monospace;
-  --font-inter: Inter, sans-serif;
+  --animate-grid-drift: grid-drift 24s linear infinite;
+  --animate-scan: scan 7s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+  --animate-scroll-dot: scroll-dot 1.8s cubic-bezier(0.16, 1, 0.3, 1) infinite;
 
   @keyframes fade-in {
     0% {
@@ -138,91 +73,108 @@
       opacity: 1;
     }
   }
-  @keyframes blink {
+  @keyframes grid-drift {
     0% {
+      transform: translate3d(0, 0, 0);
+    }
+    100% {
+      transform: translate3d(-64px, -64px, 0);
+    }
+  }
+  @keyframes scan {
+    0% {
+      transform: translateY(-100%);
       opacity: 0;
     }
-    50% {
+    15% {
+      opacity: 1;
+    }
+    85% {
       opacity: 1;
     }
     100% {
+      transform: translateY(100vh);
       opacity: 0;
     }
   }
-  @keyframes fade-up {
+  @keyframes scroll-dot {
     0% {
-      top: 5px;
+      transform: translateY(0);
+      opacity: 0;
+    }
+    30% {
+      opacity: 1;
     }
     100% {
-      top: 0px;
+      transform: translateY(14px);
+      opacity: 0;
     }
   }
 }
 
-/*
-  The default border color has changed to `currentColor` in Tailwind CSS v4,
-  so we've added these compatibility styles to make sure everything still
-  looks the same as it did with Tailwind CSS v3.
-
-  If we ever want to remove these styles, we need to add an explicit border
-  color utility to any element that depends on these defaults.
-*/
+/* Tailwind v4 default border is currentColor; keep v3 behaviour. */
 @layer base {
   *,
   ::after,
   ::before,
   ::backdrop,
   ::file-selector-button {
-    border-color: var(--color-gray-200, currentColor);
+    border-color: var(--color-border, currentColor);
   }
 }
 
 html {
-  scroll-behavior: smooth !important;
+  scroll-behavior: smooth;
   scrollbar-width: none;
-  ::-webkit-scrollbar {
-    display: none;
-  }
+}
+html::-webkit-scrollbar {
+  display: none;
 }
 
 body {
-  font-family: 'Fira Code', monospace;
-  font-optical-sizing: auto;
-  font-style: normal;
-
-  @apply bg-primary text-white;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  transition:
+    background-color 0.4s ease,
+    color 0.4s ease;
+  @apply bg-primary text-primary-content font-sans;
 }
 
-.rehype-code-title {
-  @apply text-primary-content rounded-t-md bg-[#05101a] px-6 py-3 text-sm font-medium;
+::selection {
+  background: color-mix(in srgb, var(--a) 30%, transparent);
+  color: var(--n);
 }
 
-h2,
-h3 {
-  scroll-margin-top: 5.25rem;
+:focus-visible {
+  outline: 2px solid var(--a);
+  outline-offset: 3px;
+}
+
+/* Native cursor hidden only while the custom cursor is active (fine pointer + motion allowed). */
+html.has-custom-cursor,
+html.has-custom-cursor * {
+  cursor: none !important;
+}
+
+/* Hairline grid behind the hero */
+.bg-grid {
+  background-image:
+    linear-gradient(to right, color-mix(in srgb, var(--b) 80%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in srgb, var(--b) 80%, transparent) 1px, transparent 1px);
+  background-size: 64px 64px;
 }
 
 section {
-  scroll-margin-top: 1.5rem;
+  scroll-margin-top: 4.5rem;
 }
 
-/* Safari-only */
-@supports (-webkit-hyphens: none) {
-  * {
-    scroll-margin-top: 0;
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
   }
-}
-
-@media screen and (min-width: 1024px) {
-  h2,
-  h3 {
-    scroll-margin-top: 1.5rem;
-  }
-}
-
-.hide-scrollbar {
-  -webkit-scrollbar {
-    display: none;
-  }
-  scrollbar-width: none;
 }

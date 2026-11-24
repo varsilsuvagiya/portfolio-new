@@ -1,8 +1,0 @@
-{
-  "priority": 5,
-  "title": "Expense Tracker App",
-  "shortDescription": "Voici notre application de pointe Expense Tracker – votre compagnon ultime pour gérer vos finances et suivre vos dépenses où que vous soyez ! Avec un design élégant et des fonctionnalités puissantes, notre application vous offre un suivi précis et à jour des dépenses.",
-  "cover": "/projects/exp.png",
-  "livePreview": "https://expense-tracker-self-rho.vercel.app/",
-  "githubLink": ""
-}

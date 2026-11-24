@@ -27,6 +27,16 @@ export default function ChatWidget() {
     return () => window.removeEventListener('resize', updateViewport)
   }, [])
 
+  useEffect(() => {
+    const toggle = () => setIsOpen((o) => !o)
+    window.addEventListener('portfolio:toggle-chat', toggle)
+    return () => window.removeEventListener('portfolio:toggle-chat', toggle)
+  }, [])
+
+  useEffect(() => {
+    window.dispatchEvent(new CustomEvent('portfolio:chat-state', { detail: isOpen }))
+  }, [isOpen])
+
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
     const text = input.trim()
@@ -44,54 +54,16 @@ export default function ChatWidget() {
 
   return (
     <>
-      {/* Floating toggle button */}
-      <button
-        onClick={() => setIsOpen((prev) => !prev)}
-        aria-label={isOpen ? 'Close chat' : 'Open chat'}
-        style={{
-          position: 'fixed',
-          bottom: isMobile ? '4.5rem' : '7.5rem',
-          right: isMobile ? '24px' : '48px',
-          zIndex: 9999,
-          width: isMobile ? '2.5rem' : '3.375rem',
-          height: isMobile ? '2.5rem' : '3.375rem',
-          borderRadius: '50%',
-          background: 'var(--sc)',
-          border: 'none',
-          cursor: 'pointer',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          boxShadow: '0 4px 20px rgba(0,0,0,0.35)',
-          transition: 'transform 0.2s',
-        }}
-        onMouseEnter={(e) => ((e.currentTarget as HTMLButtonElement).style.transform = 'scale(1.1)')}
-        onMouseLeave={(e) => ((e.currentTarget as HTMLButtonElement).style.transform = 'scale(1)')}
-      >
-        {isOpen ? (
-          /* X icon */
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-            <line x1="18" y1="6" x2="6" y2="18" />
-            <line x1="6" y1="6" x2="18" y2="18" />
-          </svg>
-        ) : (
-          /* Chat bubble icon */
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="white">
-            <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z" />
-          </svg>
-        )}
-      </button>
-
       {/* Chat window */}
       {isOpen && (
         <div
           style={{
             position: 'fixed',
-            bottom: '5.5rem',
-            right: '1.5rem',
+            bottom: isMobile ? '5.5rem' : '6.75rem',
+            right: isMobile ? '1rem' : '2rem',
             zIndex: 9998,
             width: 'min(380px, calc(100vw - 2rem))',
-            height: 'min(520px, calc(100dvh - 7rem))',
+            height: isMobile ? 'calc(100dvh - 10rem)' : 'min(560px, calc(100dvh - 11rem))',
             background: 'var(--s)',
             border: '1px solid var(--b)',
             borderRadius: '1rem',

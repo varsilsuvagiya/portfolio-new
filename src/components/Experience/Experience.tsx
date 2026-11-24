@@ -1,68 +1,78 @@
 'use client'
 
-import React from 'react'
+import { motion, useScroll, useSpring } from 'framer-motion'
+import { useRef } from 'react'
+import SectionHeading from '../SectionHeading/SectionHeading'
 import ScrollReveal from '../UI/ScrollReveal'
 
-interface ExperienceItem {
-  type: 'experience' | 'education'
-  title: string
+export interface TimelineEntry {
+  id: string
+  role: string
   company: string
-  date: string
-  description: string
+  location: string
+  dates: string
+  tech: string[]
+  bullets: string[]
 }
 
 interface ExperienceProps {
-  data: ExperienceItem[]
-  dict: Record<string, string>
+  label: string
+  title: string
+  entries: TimelineEntry[]
 }
 
-const Experience: React.FC<ExperienceProps> = ({ data, dict }) => {
+// Timeline on the Swiss grid: dates in the rail, a progress line that fills with scroll, content across 9 columns.
+const Experience = ({ label, title, entries }: ExperienceProps) => {
+  const ref = useRef<HTMLOListElement>(null)
+  const { scrollYProgress } = useScroll({ target: ref, offset: ['start 75%', 'end 55%'] })
+  const progress = useSpring(scrollYProgress, { stiffness: 120, damping: 30, restDelta: 0.001 })
+
   return (
-    <section className="py-12 md:py-20" id="experience">
-      <div className="mx-auto max-w-[1200px] px-4">
-        <ScrollReveal>
-          <h2 className="text-secondary-content mb-12 text-center text-3xl font-bold md:text-4xl">
-            {dict.title}
-          </h2>
-        </ScrollReveal>
+    <section id="experience" className="border-border border-t py-24 md:py-40">
+      <div className="mx-auto max-w-[1440px] px-5 md:px-10">
+        <SectionHeading index="04" label={label} title={title} />
 
-        <div className="relative mx-auto mt-12 max-w-4xl px-4 md:mt-20">
-          {/* Vertical Line */}
-          <div className="bg-border absolute top-0 bottom-0 left-4 w-0.5 md:left-1/2 md:-translate-x-1/2"></div>
+        <ol ref={ref} className="relative mt-20 md:mt-32">
+          <span aria-hidden="true" className="bg-border absolute top-0 bottom-0 left-[3px] w-px md:left-[25%]" />
+          <motion.span
+            aria-hidden="true"
+            style={{ scaleY: progress }}
+            className="bg-accent absolute top-0 bottom-0 left-[3px] w-px origin-top md:left-[25%]"
+          />
 
-          <div className="space-y-12 md:space-y-24">
-            {data.map((item, index) => {
-              const isEven = index % 2 === 0
-              return (
-                <div key={index} className="relative">
-                  {/* Dot */}
-                  <div className="bg-accent absolute top-1 left-[15px] z-10 size-4 -translate-x-1/2 rounded-full border-4 border-primary ring-2 ring-primary md:left-1/2"></div>
+          {entries.map((entry) => (
+            <li key={entry.id} className="relative grid gap-5 pb-20 pl-8 last:pb-0 md:grid-cols-12 md:gap-10 md:pb-28 md:pl-0">
+              <motion.span
+                aria-hidden="true"
+                initial={{ scale: 0 }}
+                whileInView={{ scale: 1 }}
+                viewport={{ margin: '0px 0px -45% 0px' }}
+                transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+                className="bg-accent absolute top-2 left-0 size-[7px] md:left-[calc(25%-3px)]"
+              />
 
-                  <ScrollReveal direction={isEven ? 'right' : 'left'} delay={index * 0.1}>
-                    <div className={`flex w-full flex-col md:flex-row ${isEven ? 'md:justify-start' : 'md:justify-end'}`}>
-                      <div className={`md:w-5/12 ml-8 md:ml-0 ${isEven ? 'md:text-right md:mr-12' : 'md:text-left md:ml-12'}`}>
-                        <div className="bg-secondary border-border rounded-2xl border p-6 shadow-sm transition-all hover:border-accent/50">
-                          <span className="text-accent mb-2 block text-sm font-semibold uppercase tracking-wider">
-                            {item.date}
-                          </span>
-                          <h3 className="text-secondary-content text-xl font-bold">
-                            {item.title}
-                          </h3>
-                          <p className="text-tertiary-content mb-3 text-base">
-                            {item.company}
-                          </p>
-                          <p className="text-neutral text-sm leading-relaxed">
-                            {item.description}
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </ScrollReveal>
-                </div>
-              )
-            })}
-          </div>
-        </div>
+              <ScrollReveal className="md:col-span-3 md:pr-10">
+                <p className="text-neutral font-mono text-sm">{entry.dates}</p>
+                <p className="text-tertiary-content mt-1 font-mono text-xs">{entry.location}</p>
+              </ScrollReveal>
+
+              <ScrollReveal delay={0.08} className="md:col-span-8 md:col-start-5">
+                <h3 className="text-neutral text-[clamp(1.9rem,3.6vw,3.25rem)] leading-none font-semibold tracking-[-0.045em]">
+                  {entry.role}
+                </h3>
+                <p className="text-tertiary-content mt-3 text-2xl">{entry.company}</p>
+                <ul className="mt-8 grid gap-x-10 gap-y-4 lg:grid-cols-2">
+                  {entry.bullets.map((bullet) => (
+                    <li key={bullet} className="text-tertiary-content border-border border-t pt-4 leading-relaxed">
+                      {bullet}
+                    </li>
+                  ))}
+                </ul>
+                <p className="text-neutral mt-8 font-mono text-xs">{entry.tech.join(' / ')}</p>
+              </ScrollReveal>
+            </li>
+          ))}
+        </ol>
       </div>
     </section>
   )

@@ -1,40 +1,78 @@
-import { MsgIcon, PhoneIcon } from '@/utils/icons'
+import { personal } from '@/appData/personal'
+import type { Dictionary } from '@/dictionaries'
+import { ArrowUpRightIcon, DownloadIcon } from '@/utils/icons'
+import Magnetic from '../UI/Magnetic'
+import MaskText from '../UI/MaskText'
+import ScrollReveal from '../UI/ScrollReveal'
 import ContactForm from './ContactForm'
 
-type ContactSectionProps = {
-  dict?: Record<string, string>
-}
+const ContactSection = ({ dict }: { dict: Dictionary['contact'] }) => {
+  const channels = [
+    { label: dict.phone, value: personal.phone, href: personal.phoneHref },
+    { label: 'LinkedIn', value: 'in/varsil-suvagiya', href: personal.linkedin, external: true },
+    { label: 'GitHub', value: personal.githubUser, href: personal.github, external: true },
+  ]
 
-const ContactSection = ({ dict }: ContactSectionProps) => {
   return (
-    <section
-      id="contact"
-      className="bg-secondary my-8 grid grid-cols-1 gap-16 rounded-4xl p-8 md:my-16 md:grid-cols-2 md:gap-8 lg:gap-12">
-      <div className="flex flex-col justify-between gap-8">
-        <div>
-          <h3 className="text-neutral text-3xl font-bold">{dict?.title || "Let's Talk"}</h3>
-          <h4 className="text-accent text-2xl font-bold md:text-3xl">We'd love to help</h4>
-          <p className="text-neutral mt-8">
-            Crafting innovative solutions to solve real-world problems
-          </p>
-        </div>
+    <section id="contact" className="border-border border-t py-24 md:py-40">
+      <div className="mx-auto max-w-[1440px] px-5 md:px-10">
+        <p className="flex items-baseline gap-4">
+          <span className="text-tertiary-content font-mono text-xs">(07)</span>
+          <span className="text-neutral text-2xl md:text-3xl">{dict.label}</span>
+        </p>
 
-        <div className="space-y-2">
-          <p className="text-neutral text-lg font-bold">Contact Information</p>
+        <h2 className="text-neutral mt-8 text-[clamp(2.9rem,8.5vw,8.5rem)] leading-[0.9] font-semibold tracking-[-0.06em] text-balance">
+          <MaskText text={dict.title} stagger={0.05} />
+        </h2>
+
+        {/* The email is the primary call to action */}
+        <ScrollReveal className="mt-14 md:mt-20">
           <a
-            href="mailto:varsilsuvagiya@gmail.com"
-            className="text-neutral hover:text-accent flex items-center gap-1 font-light transition-colors duration-300">
-            <MsgIcon /> varsilsuvagiya@gmail.com
+            href={`mailto:${personal.email}`}
+            className="group/mail text-neutral inline-flex max-w-full items-center gap-4 text-[clamp(1.6rem,4.5vw,4rem)] break-all">
+            <span className="relative">
+              {personal.email}
+              <span className="bg-accent absolute -bottom-1 left-0 h-px w-full origin-left scale-x-100 transition-transform duration-700 group-hover/mail:scale-x-0" />
+            </span>
+            <ArrowUpRightIcon className="size-[0.6em] shrink-0 transition-transform duration-500 group-hover/mail:translate-x-1 group-hover/mail:-translate-y-1" />
           </a>
-          <a
-            href="tel:+92 3123456789"
-            className="text-neutral hover:text-accent flex items-center gap-1 font-light transition-colors duration-300">
-            <PhoneIcon />+91 9664976355
-          </a>
+          <p className="text-tertiary-content mt-6 max-w-xl text-lg">{dict.subtitle}</p>
+        </ScrollReveal>
+
+        <div className="mt-20 grid gap-16 md:mt-28 md:grid-cols-12 md:gap-10">
+          <ScrollReveal className="md:col-span-4">
+            <dl className="border-border divide-border divide-y border-y">
+              {channels.map((c) => (
+                <div key={c.label} className="flex flex-wrap items-center justify-between gap-x-6 gap-y-1 py-5">
+                  <dt className="text-tertiary-content font-mono text-[11px] tracking-[0.2em] uppercase">{c.label}</dt>
+                  <dd>
+                    <a
+                      href={c.href}
+                      {...(c.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                      className="text-neutral hover:text-accent inline-flex items-center gap-2 transition-colors">
+                      {c.value}
+                      <ArrowUpRightIcon className="shrink-0" />
+                    </a>
+                  </dd>
+                </div>
+              ))}
+            </dl>
+            <Magnetic className="mt-10">
+              <a
+                href={personal.resume}
+                download={personal.resumeFileName}
+                className="bg-secondary-content inline-flex h-12 items-center gap-2 rounded-full px-6 text-[15px] font-medium text-white">
+                <DownloadIcon />
+                {dict.resume}
+              </a>
+            </Magnetic>
+          </ScrollReveal>
+
+          <ScrollReveal delay={0.1} className="md:col-span-7 md:col-start-6">
+            <ContactForm dict={dict} />
+          </ScrollReveal>
         </div>
       </div>
-
-      <ContactForm dict={dict} />
     </section>
   )
 }

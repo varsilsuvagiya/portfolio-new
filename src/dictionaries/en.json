@@ -1,52 +1,287 @@
 {
   "navigation": {
     "about": "About",
-    "projects": "Projects",
+    "expertise": "Expertise",
+    "work": "Work",
     "experience": "Experience",
-    "testimonials": "Testimonials",
-    "blogs": "Blogs",
-    "services": "Services",
-    "contact": "Contact"
+    "contact": "Contact",
+    "menu": "Menu",
+    "close": "Close",
+    "skip": "Skip to content",
+    "theme": "Dark mode"
   },
   "hero": {
-    "greeting": "Hi, I am",
-    "role": "Full Stack Developer",
-    "description": "I build robust and scalable web applications.",
-    "hireMe": "Hire Me",
-    "linkedIn": "LinkedIn Profile"
+    "greeting": "Hi, I'm",
+    "name": "Varsil Suvagiya.",
+    "role": "Full-Stack Software Engineer.",
+    "description": "I engineer scalable web applications, SaaS platforms, and intelligent digital experiences.",
+    "currently": "Currently",
+    "location": "Surat, Gujarat, India",
+    "viewProjects": "View Selected Work",
+    "downloadResume": "Download Resume",
+    "linkedIn": "LinkedIn",
+    "github": "GitHub",
+    "scroll": "Scroll"
   },
-  "skills": {
-    "title": "My Skills"
+  "about": {
+    "label": "About",
+    "title": "Full-stack engineering, from requirements to production support.",
+    "body": "I'm a Software Engineer at Cloudus Infotech, working as a Full Stack Developer on production web applications built with Next.js, Node.js, NestJS, REST APIs, PostgreSQL/Supabase, MongoDB, and AWS. My work spans the entire lifecycle — requirements, database design, development, testing, deployment, and production support.",
+    "pillars": [
+      {
+        "title": "Frontend",
+        "text": "Responsive frontend modules and reusable UI components with React.js and Next.js."
+      },
+      {
+        "title": "Backend & APIs",
+        "text": "Backend features, REST APIs, and service integrations with Node.js, NestJS, and Core PHP."
+      },
+      {
+        "title": "Authentication & security",
+        "text": "Secure authentication with JWT and sessions, role-based access, and protected routes."
+      },
+      {
+        "title": "Databases",
+        "text": "Database design and database-driven features on PostgreSQL, Supabase, MySQL, and MongoDB."
+      },
+      {
+        "title": "Deployment",
+        "text": "Deployments on Vercel and AWS, including domain & DNS configuration and SSL."
+      },
+      {
+        "title": "Production support",
+        "text": "Performance optimization, debugging, testing, and production troubleshooting."
+      }
+    ]
   },
-  "experience": {
-    "title": "My career journey"
+  "expertise": {
+    "label": "Expertise",
+    "title": "The toolkit behind the work.",
+    "subtitle": "Technologies I use to design, build, and ship web applications.",
+    "groups": {
+      "languages": "Programming Languages",
+      "frontend": "Frontend Engineering",
+      "backend": "Backend Engineering",
+      "databases": "Database Systems",
+      "devops": "Cloud & DevOps",
+      "tools": "Development Tools",
+      "ai": "Automation & AI"
+    },
+    "architecture": {
+      "label": "System map",
+      "hint": "Select a layer to see the technologies I use there.",
+      "nodes": {
+        "frontend": "Frontend",
+        "backend": "Backend",
+        "database": "Database",
+        "cloud": "Cloud Infrastructure",
+        "ai": "AI Integration"
+      }
+    }
+  },
+  "work": {
+    "label": "Selected Work",
+    "title": "Products I've engineered.",
+    "subtitle": "SaaS platforms, marketplaces, e-commerce, and internal systems — what I built and how.",
+    "contribution": "What I built",
+    "stack": "Stack",
+    "visit": "Visit website",
+    "more": "More projects",
+    "screenshotAlt": "Screenshot of {name}",
+    "viewAll": "View all projects",
+    "details": "View case study",
+    "allTitle": "All projects",
+    "allSubtitle": "Every project from my resume and recent work — open any one for the full breakdown.",
+    "back": "All projects",
+    "overview": "Overview",
+    "next": "Next project",
+    "previous": "Previous project"
   },
   "projects": {
-    "title": "Selected projects",
-    "viewAll": "View all projects",
-    "livePreview": "Live Preview",
-    "githubLink": "Github Link"
+    "trafica": {
+      "tagline": "SEO & Generative Engine Optimization SaaS",
+      "summary": "Developed a SaaS-based SEO and GEO analysis platform that evaluates how websites perform across traditional search and AI-powered search engines.",
+      "highlights": [
+        "Implemented automated website scanning covering technical SEO, crawlability, metadata, structured data, Core Web Vitals, and on-page SEO signals.",
+        "Built AI visibility analysis to measure how brands appear in AI-generated answers across platforms such as ChatGPT, Perplexity, and Gemini.",
+        "Implemented GEO scoring, competitor comparison, citation analysis, and prioritized recommendations to help users identify and resolve search-visibility gaps.",
+        "Developed scan history and performance tracking, allowing users to re-run website audits, monitor score improvements, and measure the estimated impact of implemented fixes."
+      ]
+    },
+    "olysim": {
+      "tagline": "Global eSIM marketplace",
+      "summary": "Developed a global eSIM marketplace enabling travelers to browse, purchase, and manage prepaid mobile data plans by country and region.",
+      "highlights": [
+        "Implemented the complete eSIM purchase journey, including destination and plan selection, Stripe/PayPal payments, eSIM delivery, QR-code installation, activation, and usage tracking.",
+        "Built a secure customer account system with OTP verification, Google authentication, Firebase integration, protected routes, and purchase/account management.",
+        "Developed customer retention and B2B features, including OlyCoins loyalty rewards, referral discounts, travel content/help center, and a partner-reseller program with API access.",
+        "Built a multi-region, multi-domain architecture using Next.js 15 and TypeScript on AWS Amplify, with host-based routing, regional/currency handling, canonical SEO management, UTM tracking, and performance/accessibility optimization."
+      ]
+    },
+    "cloudusExam": {
+      "tagline": "Secure online examination platform",
+      "summary": "Developed a secure online examination platform with automated candidate intake, eligibility management, question-bank administration, exam configuration, and result processing.",
+      "highlights": [
+        "Integrated Google Forms with Google Apps Script and backend APIs to automatically synchronize candidate applications, with additional CSV and manual candidate management.",
+        "Built a configurable question-paper generation engine supporting multiple sections, difficulty-based question distribution, randomized questions/options, and immutable exam-paper snapshots.",
+        "Implemented a robust exam-taking system with countdown timer, question navigation, autosave, exam-state persistence, resume functionality, and automatic submission.",
+        "Developed anti-cheating and assessment workflows, monitoring tab switching, fullscreen exit, copy/paste, print, and other unauthorized activity, with automated violation-based exam termination and detailed scoring/reporting."
+      ]
+    },
+    "braoza": {
+      "tagline": "Website accessibility monitoring SaaS",
+      "summary": "Developed a SaaS platform for monitoring website accessibility, enabling organizations to register and manage multiple websites under their company accounts.",
+      "highlights": [
+        "Implemented automated accessibility scanning and WCAG issue detection, helping identify accessibility problems across registered websites.",
+        "Built AI-powered image accessibility features to detect images with missing or inadequate alt text and generate suitable alternative descriptions.",
+        "Developed automated accessibility fixes and tracking, allowing users to review and manage remediation actions for individual websites.",
+        "Implemented supporting SaaS functionality, including mobile responsiveness monitoring, team management, usage/quota tracking, billing & invoices, account management, and support tickets."
+      ]
+    },
+    "vongo": {
+      "tagline": "Event Ticketing & Event Management Platform",
+      "summary": "Developed an online event ticketing platform that enables users to discover and purchase tickets for events, parties, and entertainment activities.",
+      "highlights": [
+        "Implemented event discovery and categorization, allowing users to find events based on categories and locations.",
+        "Built an event management and ticket-selling workflow for organizers to create and manage events through the platform.",
+        "Integrated a ticket scanning system/mobile scanning app to support ticket validation and event entry management.",
+        "Developed a complete digital platform covering event promotion, ticket sales, customer orders, and event-entry operations."
+      ]
+    },
+    "exambro": {
+      "tagline": "Multi-exam preparation platform",
+      "summary": "Developed a multi-exam preparation platform for JEE, NEET, CUET, and multiple state-level CET examinations, supporting chapter-wise and topic-wise practice.",
+      "highlights": [
+        "Implemented NTA-style online mock tests with timed exams, question navigation, subject sections, and detailed result analysis.",
+        "Built a large PYQ/question-bank system with multilingual support across English, Hindi, and Gujarati.",
+        "Developed a teacher-focused question paper generator with manual, automatic, and expert modes, smart filtering, no-repeat logic, institute branding, and PDF, solution, and PPT generation.",
+        "Implemented performance analytics and AI-assisted learning features, including accuracy, time analysis, chapter mastery, question recommendations, solution analysis, and study guidance."
+      ]
+    },
+    "assureit": {
+      "tagline": "Infrastructure & Permit Management SaaS",
+      "summary": "Developed a cloud-based SaaS platform for coordinating infrastructure projects, permits, applications, and communication between organizations and applicants.",
+      "highlights": [
+        "Implemented workflows for permit and application management, helping organizations process and track infrastructure-related requests.",
+        "Built functionality to facilitate communication and coordination between applicants, infrastructure organizations, and relevant stakeholders.",
+        "Designed the platform to support multiple industries, including utilities, energy, transportation, telecommunications, municipalities, defense, and environmental services."
+      ]
+    },
+    "federation": {
+      "tagline": "Data-entry & case management system",
+      "summary": "Developed an internal data-entry and case management system for managing records related to stolen and recovered property cases.",
+      "highlights": [
+        "Implemented secure user authentication and role-based access for authorized personnel.",
+        "Built structured workflows for entering, updating, tracking, and managing stolen-property records.",
+        "Designed data management features to help users quickly search and maintain case and property information.",
+        "Developed an administrative system focused on accurate record keeping and efficient handling of large volumes of case-related data."
+      ]
+    },
+    "radheshyam": {
+      "tagline": "E-commerce platform",
+      "summary": "Developed an e-commerce platform for steelware, cookware, crockery, kitchen appliances, storage products, and household essentials.",
+      "highlights": [
+        "Implemented a product catalog and category-based shopping, allowing customers to browse products across cookware, dinnerware, kitchen storage, appliances, gifting, and more.",
+        "Built detailed product pages with pricing, discounts, specifications, reviews, product variants, warranty information, and purchase options.",
+        "Implemented an online shopping experience with cart/add-to-cart functionality, product discovery, ordering, and delivery support, including international shipping.",
+        "Developed a modern, responsive storefront focused on online retail, product presentation, customer reviews, promotional pricing, and a seamless shopping experience."
+      ]
+    },
+    "community": {
+      "tagline": "Centralized community management platform",
+      "summary": "Developed a centralized community management platform for creating and managing multiple Gam/Parivar community applications.",
+      "highlights": [
+        "Implemented community administration workflows, including application creation, editing, activation/deactivation, and status management.",
+        "Built member, surname, and family management features for organizing community information in a structured manner.",
+        "Implemented custom domain and administrator configuration for individual community applications.",
+        "Developed a centralized dashboard with search, filtering, and application management to simplify administration across multiple communities."
+      ]
+    },
+    "villageonweb": {
+      "tagline": "Online village directory",
+      "summary": "A platform that gives villages their own presence on the web, with a public A–Z directory of villages and a dedicated page for each village.",
+      "highlights": []
+    },
+    "jovasu": {
+      "tagline": "E-commerce store for sweets & dry fruits",
+      "summary": "Developed an online store for Jovasu Dryfruits, Surat — sweets, dry fruits, gift boxes, and daily kitchen staples with pan-India delivery.",
+      "highlights": [
+        "Built category-based shopping across Gifting, Royal Cashews, Sweets & Chocolates, Pistachio Delights, Mixed Dry Fruits, and Indian Sweets, with best-seller, hero-product, and popular-product showcases.",
+        "Implemented Watch & Shop video shopping, gifting, and bulk-order sections, along with blogs, FAQs, and store-visit information.",
+        "Added customer features including order history, wishlist, cart, and live purchase notifications.",
+        "Deployed with Next.js on Vercel, serving product media through Cloudinary."
+      ]
+    }
   },
-  "services": {
-    "title": "My professional services",
-    "subtitle": "I offer a wide range of services to ensure you have the best written code and stay ahead in the competition."
+  "experience": {
+    "label": "Experience",
+    "title": "Where I've built software.",
+    "present": "Present",
+    "entries": {
+      "cloudus": {
+        "bullets": [
+          "Working as a Full Stack Developer, developing and maintaining production web applications.",
+          "Working with Next.js, Node.js, NestJS, REST APIs, PostgreSQL/Supabase, MongoDB, and AWS.",
+          "Handling deployment and production tasks, including Vercel/AWS, domain & DNS configuration, SSL, performance optimization, and troubleshooting.",
+          "Gained experience in end-to-end project development, from requirements and database design to development, testing, deployment, and production support."
+        ]
+      },
+      "lathiya": {
+        "bullets": [
+          "Developed and maintained full-stack web applications using React.js, Next.js, Node.js, and Core PHP.",
+          "Built reusable, responsive UI components and integrated backend services.",
+          "Implemented authentication, API integrations, state management, and database-driven features.",
+          "Implemented secure authentication systems using JWT and sessions."
+        ]
+      },
+      "trueline": {
+        "bullets": [
+          "Developed responsive frontend modules using React.js and Next.js.",
+          "Assisted in developing backend features and REST API integrations using Node.js.",
+          "Participated in debugging, testing, and performance optimization.",
+          "Collaborated with the team using Git and GitLab."
+        ]
+      }
+    }
   },
-  "testimonials": {
-    "title": "Client's Testimonials"
+  "education": {
+    "label": "Education",
+    "title": "Academic foundation.",
+    "cgpa": "CGPA"
+  },
+  "github": {
+    "label": "Open Source",
+    "title": "Activity on GitHub.",
+    "subtitle": "Live data from my public GitHub profile.",
+    "repos": "Public repositories",
+    "followers": "Followers",
+    "languages": "Languages across public repositories",
+    "recent": "Recently updated",
+    "viewProfile": "View GitHub profile",
+    "unavailable": "GitHub data couldn't be loaded right now.",
+    "updated": "Updated"
   },
   "contact": {
-    "title": "It's time to build something exciting!",
+    "label": "Contact",
+    "title": "Let's build something meaningful.",
+    "subtitle": "Reach out by email, phone, LinkedIn, or the form below.",
+    "email": "Email",
+    "phone": "Phone",
     "namePlaceholder": "Name",
     "emailPlaceholder": "Email",
+    "subjectPlaceholder": "Subject",
     "messagePlaceholder": "Message",
-    "submit": "Submit your request"
+    "submit": "Send message",
+    "submitting": "Sending…",
+    "resume": "Download Resume"
   },
   "footer": {
-    "description": "Building robust and scalable web applications with a focus on modern technologies and exceptional user experiences. Transforming ideas into elegant digital solutions.",
+    "description": "Full-stack software engineer building web applications and SaaS platforms.",
     "socials": "Socials",
     "navigation": "Navigation",
     "contact": "Contact",
-    "rights": "All Rights reserved.",
-    "languages": "Languages"
+    "rights": "All rights reserved.",
+    "languages": "Languages",
+    "backToTop": "Back to top"
   }
 }

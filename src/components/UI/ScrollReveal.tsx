@@ -1,58 +1,40 @@
 'use client'
 
-import { motion, useInView } from 'framer-motion'
-import { useRef, ReactNode } from 'react'
+import { motion } from 'framer-motion'
+import { ReactNode } from 'react'
+
+const offsets = {
+  up: { y: 28 },
+  down: { y: -28 },
+  left: { x: 28 },
+  right: { x: -28 },
+  none: {},
+}
 
 interface ScrollRevealProps {
   children: ReactNode
-  direction?: 'up' | 'down' | 'left' | 'right' | 'none'
+  direction?: keyof typeof offsets
   delay?: number
   duration?: number
   className?: string
-  once?: boolean
 }
+
+export const EASE_OUT_EXPO = [0.16, 1, 0.3, 1] as const
 
 export default function ScrollReveal({
   children,
   direction = 'up',
   delay = 0,
-  duration = 0.5,
-  className = '',
-  once = true,
+  duration = 0.8,
+  className,
 }: ScrollRevealProps) {
-  const ref = useRef(null)
-  
-  // Trigger animation when the component is vertically mostly in view
-  const isInView = useInView(ref, { once, margin: '-10% 0px' })
-
-  const getVariants = () => {
-    switch (direction) {
-      case 'up':
-        return { hidden: { opacity: 0, y: 50 }, visible: { opacity: 1, y: 0 } }
-      case 'down':
-        return { hidden: { opacity: 0, y: -50 }, visible: { opacity: 1, y: 0 } }
-      case 'left':
-        return { hidden: { opacity: 0, x: 50 }, visible: { opacity: 1, x: 0 } }
-      case 'right':
-        return { hidden: { opacity: 0, x: -50 }, visible: { opacity: 1, x: 0 } }
-      case 'none':
-        return { hidden: { opacity: 0 }, visible: { opacity: 1 } }
-      default:
-        return { hidden: { opacity: 0, y: 50 }, visible: { opacity: 1, y: 0 } }
-    }
-  }
-
-  const variants = getVariants()
-
   return (
     <motion.div
-      ref={ref}
-      variants={variants}
-      initial="hidden"
-      animate={isInView ? 'visible' : 'hidden'}
-      transition={{ duration, delay, ease: 'easeOut' }}
-      className={className}
-    >
+      initial={{ opacity: 0, ...offsets[direction] }}
+      whileInView={{ opacity: 1, x: 0, y: 0 }}
+      viewport={{ once: true, margin: '0px 0px -12% 0px' }}
+      transition={{ duration, delay, ease: EASE_OUT_EXPO }}
+      className={className}>
       {children}
     </motion.div>
   )

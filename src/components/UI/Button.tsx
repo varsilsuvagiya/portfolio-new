@@ -8,7 +8,7 @@ const Button: FC<ButtonProps> = ({ text, ...props }) => {
   return (
     <button
       {...props}
-      className="bg-accent hover:bg-accent/60 disabled:bg-accent/40 text-secondary w-full cursor-pointer rounded-lg px-[10px] py-2 transition-colors duration-300">
+      className="bg-secondary-content h-12 cursor-pointer rounded-full px-7 text-white text-sm font-medium transition-opacity duration-300 hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50">
       {text}
     </button>
   )

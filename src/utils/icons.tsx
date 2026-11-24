@@ -1,40 +1,10 @@
 import { FC, SVGProps } from 'react'
 
-import Earning from '../assets/icons/earning.svg'
-import ExpressjsIcon from '../assets/icons/express.svg'
-import JavaScriptIcon from '../assets/icons/javascript.svg'
-import Likes from '../assets/icons/likes.svg'
-import NestjsIcon from '../assets/icons/nest.svg'
-import NextjsIcon from '../assets/icons/nextjs.svg'
-import NodejsIcon from '../assets/icons/nodejs.svg'
-import ReactIcon from '../assets/icons/react.svg'
-import SocketIcon from '../assets/icons/socket.svg'
-import Star from '../assets/icons/star.svg'
-import TailwindCSS from '../assets/icons/tailwind-css.svg'
-import Timer from '../assets/icons/timer.svg'
-import TypescriptIcon from '../assets/icons/typescript.svg'
-
-const PreviewIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
-  return (
-    <svg
-      width="18"
-      height="20"
-      // className="text-accent"
-      viewBox="0 0 20 19"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      {...props}>
-      <path
-        d="M19.25 6.69867C16.94 3.06867 13.56 0.978668 10 0.978668C8.22 0.978668 6.49 1.49867 4.91 2.46867C3.33 3.44867 1.91 4.87867 0.75 6.69867C-0.25 8.26867 -0.25 10.8187 0.75 12.3887C3.06 16.0287 6.44 18.1087 10 18.1087C11.78 18.1087 13.51 17.5887 15.09 16.6187C16.67 15.6387 18.09 14.2087 19.25 12.3887C20.25 10.8287 20.25 8.26867 19.25 6.69867ZM10 13.5887C7.76 13.5887 5.96 11.7787 5.96 9.54867C5.96 7.31867 7.76 5.50867 10 5.50867C12.24 5.50867 14.04 7.31867 14.04 9.54867C14.04 11.7787 12.24 13.5887 10 13.5887Z"
-        fill="currentColor"
-      />
-    </svg>
-  )
-}
-
 const GithubIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
   return (
     <svg
+      aria-hidden="true"
+      focusable="false"
       width="24"
       height="25"
       viewBox="0 0 24 25"
@@ -51,49 +21,11 @@ const GithubIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
   )
 }
 
-const ArrowLeftIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      color="currentColor"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      {...props}>
-      <line x1="19" y1="12" x2="5" y2="12"></line>
-      <polyline points="12 19 5 12 12 5"></polyline>
-    </svg>
-  )
-}
-
-const ArrowRightIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      color="currentColor"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      {...props}>
-      <line x1="5" y1="12" x2="19" y2="12"></line>
-      <polyline points="12 5 19 12 12 19"></polyline>
-    </svg>
-  )
-}
-
 const CheckIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
   return (
     <svg
+      aria-hidden="true"
+      focusable="false"
       xmlns="http://www.w3.org/2000/svg"
       width="20"
       height="20"
@@ -109,34 +41,16 @@ const CheckIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
   )
 }
 
-const ChevronRightIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      {...props}>
-      <polyline points="9 18 15 12 9 6"></polyline>
-    </svg>
-  )
-}
-
 const LinkedIn: FC<SVGProps<SVGSVGElement>> = (props) => {
   return (
     <svg
-      role="img"
+      aria-hidden="true"
+      focusable="false"
       width={24}
       height={24}
       viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
       {...props}>
-      <title>LinkedIn</title>
       <path
         fill="currentColor"
         d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
@@ -145,81 +59,11 @@ const LinkedIn: FC<SVGProps<SVGSVGElement>> = (props) => {
   )
 }
 
-const Codepen: FC<SVGProps<SVGSVGElement>> = (props) => {
-  return (
-    <svg
-      role="img"
-      width={24}
-      height={24}
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
-      {...props}>
-      <title>CodePen</title>
-      <path
-        fill="currentColor"
-        d="M18.144 13.067v-2.134L16.55 12zm1.276 1.194a.628.628 0 01-.006.083l-.005.028-.011.053-.01.031c-.005.016-.01.031-.017.047l-.014.03a.78.78 0 01-.021.043l-.019.03a.57.57 0 01-.08.1l-.026.025a.602.602 0 01-.036.03l-.029.022-.01.008-6.782 4.522a.637.637 0 01-.708 0L4.864 14.79l-.01-.008a.599.599 0 01-.065-.052l-.026-.025-.032-.034-.021-.028a.588.588 0 01-.067-.11l-.014-.031a.644.644 0 01-.017-.047l-.01-.03c-.004-.018-.008-.036-.01-.054l-.006-.028a.628.628 0 01-.006-.083V9.739c0-.028.002-.055.006-.083l.005-.027.011-.054.01-.03a.574.574 0 01.12-.217l.031-.034.026-.025a.62.62 0 01.065-.052l.01-.008 6.782-4.521a.638.638 0 01.708 0l6.782 4.521.01.008.03.022.035.03c.01.008.017.016.026.025a.545.545 0 01.08.1l.019.03a.633.633 0 01.021.043l.014.03c.007.016.012.032.017.047l.01.031c.004.018.008.036.01.054l.006.027a.619.619 0 01.006.083zM12 0C5.373 0 0 5.372 0 12 0 18.627 5.373 24 12 24c6.628 0 12-5.372 12-12 0-6.627-5.372-12-12-12m0 10.492L9.745 12 12 13.51 14.255 12zm.638 4.124v2.975l4.996-3.33-2.232-1.493zm-6.272-.356l4.996 3.33v-2.974l-2.764-1.849zm11.268-4.52l-4.996-3.33v2.974l2.764 1.85zm-6.272-.356V6.41L6.366 9.74l2.232 1.493zm-5.506 1.549v2.134L7.45 12Z"
-      />
-    </svg>
-  )
-}
-
-const X: FC<SVGProps<SVGSVGElement>> = (props) => {
-  return (
-    <svg
-      role="img"
-      width={24}
-      height={24}
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
-      {...props}>
-      <title>X</title>
-      <path
-        fill="currentColor"
-        d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"
-      />
-    </svg>
-  )
-}
-
-const Instagram: FC<SVGProps<SVGSVGElement>> = (props) => {
-  return (
-    <svg
-      role="img"
-      width={24}
-      height={24}
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
-      {...props}>
-      <title>Instagram</title>
-      <path
-        fill="currentColor"
-        d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"
-      />
-    </svg>
-  )
-}
-
-const Facebook: FC<SVGProps<SVGSVGElement>> = (props) => {
-  return (
-    <svg
-      role="img"
-      width={24}
-      height={24}
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
-      {...props}>
-      <title>Facebook</title>
-      <path
-        fill="currentColor"
-        d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"
-      />
-    </svg>
-  )
-}
-
 const BurgerIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
   return (
     <svg
+      aria-hidden="true"
+      focusable="false"
       width="18"
       height="16"
       viewBox="0 0 18 16"
@@ -234,6 +78,8 @@ const BurgerIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
 const CloseIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
   return (
     <svg
+      aria-hidden="true"
+      focusable="false"
       width="16"
       height="16"
       viewBox="0 0 16 16"
@@ -248,29 +94,11 @@ const CloseIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
   )
 }
 
-const StarIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
-  return (
-    <svg
-      width="20"
-      height="21"
-      viewBox="0 0 20 21"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      {...props}>
-      <path
-        d="M9.10264 3.58103C9.46948 2.83787 10.5292 2.83787 10.8961 3.58103L12.3419 6.51016C12.4874 6.80501 12.7686 7.00947 13.094 7.05702L16.3289 7.52985C17.1488 7.6497 17.4756 8.65754 16.882 9.2357L14.5428 11.5141C14.3069 11.7438 14.1993 12.075 14.2549 12.3995L14.8068 15.617C14.9469 16.434 14.0893 17.057 13.3557 16.6712L10.4648 15.1508C10.1734 14.9976 9.82528 14.9976 9.5339 15.1508L6.64298 16.6712C5.90935 17.057 5.0518 16.434 5.19192 15.617L5.74377 12.3995C5.79943 12.075 5.69177 11.7438 5.45589 11.5141L3.1167 9.2357C2.5231 8.65754 2.84988 7.6497 3.6698 7.52985L6.90472 7.05702C7.23007 7.00947 7.51125 6.80501 7.65679 6.51016L9.10264 3.58103Z"
-        stroke="#FFB800"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        fill="currentColor"
-      />
-    </svg>
-  )
-}
-
 const MsgIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
   return (
     <svg
+      aria-hidden="true"
+      focusable="false"
       width="24"
       height="25"
       viewBox="0 0 24 25"
@@ -288,6 +116,8 @@ const MsgIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
 const PhoneIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
   return (
     <svg
+      aria-hidden="true"
+      focusable="false"
       width="24"
       height="25"
       viewBox="0 0 24 25"
@@ -306,34 +136,113 @@ const PhoneIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
   )
 }
 
+const ArrowUpRightIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
+  return (
+    <svg
+      aria-hidden="true"
+      focusable="false"
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.75"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}>
+      <path d="M7 17 17 7M8 7h9v9" />
+    </svg>
+  )
+}
+
+const DownloadIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
+  return (
+    <svg
+      aria-hidden="true"
+      focusable="false"
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.75"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}>
+      <path d="M12 3v12m0 0-4.5-4.5M12 15l4.5-4.5M4 20h16" />
+    </svg>
+  )
+}
+
+const PlusIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
+  return (
+    <svg
+      aria-hidden="true"
+      focusable="false"
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.75"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}>
+      <path d="M12 5v14M5 12h14" />
+    </svg>
+  )
+}
+
+const SunIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
+  return (
+    <svg
+      aria-hidden="true"
+      focusable="false"
+      width="18"
+      height="18"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.75"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}>
+      <circle cx="12" cy="12" r="4" />
+      <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
+    </svg>
+  )
+}
+
+const MoonIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
+  return (
+    <svg
+      aria-hidden="true"
+      focusable="false"
+      width="18"
+      height="18"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.75"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}>
+      <path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401" />
+    </svg>
+  )
+}
+
 export {
-  ArrowLeftIcon,
-  ArrowRightIcon,
+  ArrowUpRightIcon,
+  MoonIcon,
+  SunIcon,
   BurgerIcon,
   CheckIcon,
-  ChevronRightIcon,
   CloseIcon,
-  Codepen,
-  Earning,
-  ExpressjsIcon,
-  Facebook,
+  DownloadIcon,
   GithubIcon,
-  Instagram,
-  JavaScriptIcon,
-  Likes,
   LinkedIn,
   MsgIcon,
-  NestjsIcon,
-  NextjsIcon,
-  NodejsIcon,
   PhoneIcon,
-  PreviewIcon,
-  ReactIcon,
-  SocketIcon,
-  Star,
-  StarIcon,
-  TailwindCSS,
-  Timer,
-  TypescriptIcon,
-  X,
+  PlusIcon,
 }
